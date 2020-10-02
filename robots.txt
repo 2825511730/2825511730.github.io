@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Allow: /posts/
+Allow: /page/
+Allow: /about/
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+
+Disallow: 
+Disallow: /css/
+Disallow: /js/
+Disallow: /libs/
+Disallow: /medias/
+Disallow: /fonts/
+Sitemap: https://cyouagain.cn/baidusitemap.xml
