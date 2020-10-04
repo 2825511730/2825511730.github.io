@@ -1,0 +1,11 @@
+百度API POST提交说明：
+
+约定：
+    url="/pages/details/details"
+    参数：status
+   
+   status=0，如何使用？   （use.txt）
+   status=1，关于小程序？（aboutMiniApp.txt）
+   status=2，关于公众号？（aboutGzh.txt）
+
+文档url：baidu_api_post_submit/xxx.txt
