@@ -1,1 +1,13 @@
-关于公众号
+## 关于公众号
+
+ - IT技术分享
+ - 计算机类毕业设计系统源码
+ - 程序人生
+ 
+ 公众号官网：www.cyouagain.cn
+ 
+ 热门文章：gzh.cyouagain.cn
+
+欢迎扫码关注：
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201005224715837.jpg#pic_left)
+

@@ -1,1 +1,26 @@
-关于小程序
+## 关于小程序
+
+网站运营少不了SEO，其中网站资源主动提交是搜索引擎优化中非常关键的一步。百度作为全球最大的中文搜索引擎，拥有庞大的资源网络和使用人群。
+
+本小程序就是对百度API资源提交方式做了处理和封装，让使用者专注于做网站优化，提高工作效率。具有操作简单、打开即用等特点。
+
+网页收录API提交助手只作为小程序入门项目，仅供学习参考，无盈利性质。
+
+## 功能划分与说明
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2020100522215059.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20201005223555774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left)
+
+如上图所示，将网页收录API提交助手划分为6个区域，其中：
+
+1~3号属于信息录入区，用于填写程序运行的必要支撑数据
+
+4号为程序控制区域，用来控制小程序运行、数据更新等
+
+5号为使用说明区，可以查看小程序的使用信息
+
+6号为结果展示区，输出程序执行结果
+
+## 其它说明
+
+ - 此程序仅供学习，获取源码请在公众号【C you again】私信
+ - 欢迎志同道合者加入，一起学习
