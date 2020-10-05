@@ -1,1 +1,40 @@
-使用说明
+# 百度网页收录API提交助手使用说明
+网站运营少不了SEO，其中网站资源主动提交是搜索引擎优化中非常关键的一步。
+
+百度作为全球最大的中文搜索引擎，拥有庞大的资源网络和使用人群，本小程序就是对百度API资源提交方式做了处理和封装，让使用者专注于做网站优化，提高工作效率。具有操作简单、打开即用等特点。
+
+## 第一步：获取site和token值
+
+ - 浏览器搜索“百度资源平台”或直接输入“https://ziyuan.baidu.com/”打开并登陆网站
+ - 选择 用户中心->站点管理->添加网站->完成验证。
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201005213534438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center)
+ 
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020100521372426.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center)
+ 
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20201005213838752.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20201005214530141.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center)
+
+ - 完成验证后点击左侧栏的 普通收录 看到如下界面：
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/202010052149584.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center)
+ 从上图中可以看到：
+ **site为：** https://dorm.cyouagain.cn
+ **token：** YYYYYYYYYYY
+ 说明：这里的token值只为做演示，为无效值。
+
+ 
+
+## 第二步： 将上述信息填写到小程序
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201005215705297.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left)
+ 
+
+ 
+
+## 第三步：查看结果
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201005215817718.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2020100521591091.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20201005220309579.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left)
+以上就是所有教程了，因本人技术有限，难免会出现一些错误，欢迎指正！任何问题请在公众号【C you again】后台私信。
