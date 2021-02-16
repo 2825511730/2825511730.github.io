@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0'>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
     
   
   <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta http-equiv='x-dns-prefetch-control' content='on' />
 
   <!-- 页面元数据 -->
   
@@ -35,59 +37,38 @@
   
 
   <!-- link -->
-  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
-
-  
-  
-
-  
-
-  
-
-  
-
   
 
   <!-- import link -->
   
 
   
-  
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/first.css">
 
   
+
   
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
   
-  <!-- 脚本懒加载函数 -->
-  <script>
-  function loadScript(src, cb) {
-    var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
-    var script = document.createElement('script');
-    script.setAttribute('type','text/javascript');
-    if (cb) script.onload = cb;
-    script.setAttribute('src', src);
-    HEAD.appendChild(script);
-  }
-  //https://github.com/filamentgroup/loadCSS
-  !function(c){"use strict";var e=function(e,t,n,r){var o,i=c.document,a=i.createElement("link");if(t)o=t;else{var d=(i.body||i.getElementsByTagName("head")[0]).childNodes;o=d[d.length-1]}var f=i.styleSheets;if(r)for(var l in r)r.hasOwnProperty(l)&&a.setAttribute(l,r[l]);a.rel="stylesheet",a.href=e,a.media="only x",function e(t){if(i.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(a,t?o:o.nextSibling)});var s=function(e){for(var t=a.href,n=f.length;n--;)if(f[n].href===t)return e();setTimeout(function(){s(e)})};function u(){a.addEventListener&&a.removeEventListener("load",u),a.media=n||"all"}return a.addEventListener&&a.addEventListener("load",u),(a.onloadcssdefined=s)(u),a};"undefined"!=typeof exports?exports.loadCSS=e:c.loadCSS=e}("undefined"!=typeof global?global:this);
-  </script>
+
   <script id="loadcss"></script>
+
 </head>
 
 <body>
-  <header class="l_header auto shadow blur " style='opacity: 0' >
+  
+
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
-  <div class='wrapper'>
+  <div id='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
-        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
@@ -294,14 +275,13 @@
   </div>
 </header>
 
-  <div class="l_body">
-    <div class="l_cover">
+  <div id="l_body">
+    <div id="l_cover">
   
     
-    
-        <div class='cover-wrapper post search' style="display: none;">
+        <div id="full" class='cover-wrapper post search' style="display: none;">
           
-            <div class='cover-backstretch'></div>
+            <div id='cover-backstretch'></div>
           
           <div class='cover-body'>
   <div class='top'>
@@ -358,49 +338,14 @@
   </div>
 </div>
 
-          <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
         </div>
     
   
   </div>
-  
-    <div class='safearea'>
-      <div class='body-wrapper' id="pjax-container">
-        
-          <!--此文件用来存放一些不方便取值的变量--> 
-<!--思路大概是将值藏到重加载的区域内--> 
- 
- 
- 
-<div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">true</div> 
-  <div id="pjax-pageTitle">基于SSH框架的人力资源管理系统设计与实现</div> 
-  <div id="pjax-enable-cover">true</div> 
-  <div id="pjax-comment-path"></div> 
-  <div id="pjax-comment-placeholder"></div> 
-</div> 
- 
- 
-<script> 
-  // 处理封面 此时 jquery 还没加载 
-  if ("none" == "none") { // 移除封面 
-    document.getElementsByClassName('cover-wrapper')[0].style.display = "none"; 
-    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
-  } else { 
-    if ("none" == "half") { // 半屏 
-      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half'); 
-      document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("none" == "full") { // 全屏 
-      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full'); 
-      document.getElementsByClassName('scroll-down')[0].style.display = ""; 
-    } 
-    document.getElementsByClassName('cover-wrapper')[0].style.display = ""; 
-    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show"); 
-  } 
-</script> 
- 
 
-        
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
         
 
 <div class='l_main'>
@@ -510,22 +455,21 @@
 <p>奖罚管理：记录企业员工的奖罚情况。</p>
 <p>薪资管理：管理企业员工薪资，有调整薪资，添加员工及薪资，删除员工及薪资等功能。</p>
 <p>个人信息管理：查看修改个人信息。</p>
-<h2 id="05-运行截图"><a href="#05-运行截图" class="headerlink" title="05 运行截图"></a>05 运行截图</h2><h4 id="部门管理"><a href="#部门管理" class="headerlink" title="部门管理"></a>部门管理</h4><p><img src="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<h4 id="员工管理"><a href="#员工管理" class="headerlink" title="员工管理"></a>员工管理</h4><p><img src="https://img-blog.csdnimg.cn/2020082719045618.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020082719045618.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<h4 id="招聘管理"><a href="#招聘管理" class="headerlink" title="招聘管理"></a>招聘管理</h4><p><img src="https://img-blog.csdnimg.cn/2020082719052441.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020082719052441.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200827190538527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190538527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<h4 id="奖罚管理"><a href="#奖罚管理" class="headerlink" title="奖罚管理"></a>奖罚管理</h4><p><img src="https://img-blog.csdnimg.cn/20200827190607911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190607911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<h4 id="薪资管理"><a href="#薪资管理" class="headerlink" title="薪资管理"></a>薪资管理</h4><p><img src="https://img-blog.csdnimg.cn/20200827190630366.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190630366.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<h4 id="个人信息管理"><a href="#个人信息管理" class="headerlink" title="个人信息管理"></a>个人信息管理</h4><p><img src="https://img-blog.csdnimg.cn/20200827190710265.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190710265.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<h2 id="05-运行截图"><a href="#05-运行截图" class="headerlink" title="05 运行截图"></a>05 运行截图</h2><h4 id="部门管理"><a href="#部门管理" class="headerlink" title="部门管理"></a>部门管理</h4><p><img src="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h4 id="员工管理"><a href="#员工管理" class="headerlink" title="员工管理"></a>员工管理</h4><p><img src="https://img-blog.csdnimg.cn/2020082719045618.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020082719045618.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h4 id="招聘管理"><a href="#招聘管理" class="headerlink" title="招聘管理"></a>招聘管理</h4><p><img src="https://img-blog.csdnimg.cn/2020082719052441.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020082719052441.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200827190538527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190538527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h4 id="奖罚管理"><a href="#奖罚管理" class="headerlink" title="奖罚管理"></a>奖罚管理</h4><p><img src="https://img-blog.csdnimg.cn/20200827190607911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190607911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h4 id="薪资管理"><a href="#薪资管理" class="headerlink" title="薪资管理"></a>薪资管理</h4><p><img src="https://img-blog.csdnimg.cn/20200827190630366.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190630366.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h4 id="个人信息管理"><a href="#个人信息管理" class="headerlink" title="个人信息管理"></a>个人信息管理</h4><p><img src="https://img-blog.csdnimg.cn/20200827190710265.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190710265.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 <h2 id="06-主要代码"><a href="#06-主要代码" class="headerlink" title="06 主要代码"></a>06 主要代码</h2><h4 id="部门管理-1"><a href="#部门管理-1" class="headerlink" title="部门管理"></a>部门管理</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.wy.action;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpSession;</span><br><span class="line"><span class="keyword">import</span> org.apache.struts.action.ActionForm;</span><br><span class="line"><span class="keyword">import</span> org.apache.struts.action.ActionForward;</span><br><span class="line"><span class="keyword">import</span> org.apache.struts.action.ActionMapping;</span><br><span class="line"><span class="keyword">import</span> org.apache.struts.actions.DispatchAction;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.wy.dao.ObjectDao;</span><br><span class="line"><span class="keyword">import</span> com.wy.form.DepartmentForm;</span><br><span class="line"><span class="keyword">import</span> com.wy.form.ManagerForm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DepartmentAction</span> <span class="keyword">extends</span> <span class="title">DispatchAction</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> ObjectDao objectDao;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ObjectDao <span class="title">getObjectDao</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> objectDao;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setObjectDao</span><span class="params">(ObjectDao objectDao)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.objectDao = objectDao;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 部门察看操作</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ActionForward <span class="title">queryDepartment</span><span class="params">(ActionMapping mapping,</span></span></span><br><span class="line"><span class="function"><span class="params">			ActionForm form, HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">			HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">		List list = objectDao.getObjectList(<span class="string">&quot;from DepartmentForm order by id desc&quot;</span>);</span><br><span class="line">		request.setAttribute(<span class="string">&quot;list&quot;</span>, list);</span><br><span class="line">		request.setAttribute(<span class="string">&quot;employeeList&quot;</span>, objectDao.getObjectList(<span class="string">&quot;from EmployeeForm&quot;</span>));</span><br><span class="line">		<span class="keyword">return</span> mapping.findForward(<span class="string">&quot;queryDepartment&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 部门信息保存</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ActionForward <span class="title">insertDepartment</span><span class="params">(ActionMapping mapping,</span></span></span><br><span class="line"><span class="function"><span class="params">			ActionForm form, HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">			HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">		DepartmentForm departmentForm = (DepartmentForm) form;</span><br><span class="line">		DepartmentForm departmentform = (DepartmentForm)objectDao</span><br><span class="line">				.getObjectForm(<span class="string">&quot;from DepartmentForm where dt_name=&#x27;&quot;</span></span><br><span class="line">						+ departmentForm.getDt_name() + <span class="string">&quot;&#x27;&quot;</span>);</span><br><span class="line">		<span class="keyword">if</span> (departmentform== <span class="keyword">null</span>) &#123;</span><br><span class="line">			objectDao.insertObjectForm(departmentForm);</span><br><span class="line">			<span class="keyword">return</span> queryDepartment(mapping, form, request, response);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			request.setAttribute(<span class="string">&quot;result&quot;</span>, <span class="string">&quot;不能够重复提交！！！&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> mapping.findForward(<span class="string">&quot;operationDepartment&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//部门信息删除</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ActionForward <span class="title">deleteDepartment</span><span class="params">(ActionMapping mapping,</span></span></span><br><span class="line"><span class="function"><span class="params">			ActionForm form, HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">			HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">		DepartmentForm departmentform = (DepartmentForm)objectDao</span><br><span class="line">		.getObjectForm(<span class="string">&quot;from DepartmentForm where id=&#x27;&quot;</span></span><br><span class="line">				+ request.getParameter(<span class="string">&quot;id&quot;</span>) + <span class="string">&quot;&#x27;&quot;</span>);	</span><br><span class="line">		<span class="keyword">if</span>(objectDao.deleteObjectForm(departmentform))&#123;			</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			request.setAttribute(<span class="string">&quot;result&quot;</span>, <span class="string">&quot;删除部门信息失败！！！&quot;</span>);</span><br><span class="line">		</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> mapping.findForward(<span class="string">&quot;operationDepartment&quot;</span>);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h4 id="培训管理"><a href="#培训管理" class="headerlink" title="培训管理"></a>培训管理</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.wy.action;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.struts.action.ActionForm;</span><br><span class="line"><span class="keyword">import</span> org.apache.struts.action.ActionForward;</span><br><span class="line"><span class="keyword">import</span> org.apache.struts.action.ActionMapping;</span><br><span class="line"><span class="keyword">import</span> org.apache.struts.actions.DispatchAction;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.wy.dao.ObjectDao;</span><br><span class="line"><span class="keyword">import</span> com.wy.form.TrainForm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TrainAction</span> <span class="keyword">extends</span> <span class="title">DispatchAction</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> ObjectDao objectDao;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ObjectDao <span class="title">getObjectDao</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> objectDao;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setObjectDao</span><span class="params">(ObjectDao objectDao)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.objectDao = objectDao;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 培训察看操作</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ActionForward <span class="title">queryTrain</span><span class="params">(ActionMapping mapping,</span></span></span><br><span class="line"><span class="function"><span class="params">			ActionForm form, HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">			HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">		List list = objectDao.getObjectList(<span class="string">&quot;from TrainForm order by id desc&quot;</span>);</span><br><span class="line">		request.setAttribute(<span class="string">&quot;list&quot;</span>, list);</span><br><span class="line">		<span class="keyword">return</span> mapping.findForward(<span class="string">&quot;queryTrain&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 添加培训操作</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ActionForward <span class="title">deleteTrain</span><span class="params">(ActionMapping mapping,</span></span></span><br><span class="line"><span class="function"><span class="params">			ActionForm form, HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">			HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">		String id=request.getParameter(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">		TrainForm trainForm=(TrainForm)objectDao.getObjectForm(<span class="string">&quot;from TrainForm where id=&#x27;&quot;</span>+id+<span class="string">&quot;&#x27;&quot;</span>);</span><br><span class="line">		<span class="keyword">this</span>.objectDao.deleteObjectForm(trainForm);</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.queryTrain(mapping, form, request, response);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//添加培训操作</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ActionForward <span class="title">saveTrain</span><span class="params">(ActionMapping mapping,</span></span></span><br><span class="line"><span class="function"><span class="params">			ActionForm form, HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">			HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">		TrainForm trainForm=(TrainForm)form;</span><br><span class="line">		<span class="keyword">this</span>.objectDao.insertObjectForm(trainForm);</span><br><span class="line">		<span class="keyword">return</span> mapping.findForward(<span class="string">&quot;operationTrain&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//培训详细查询</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ActionForward <span class="title">queryOneTrain</span><span class="params">(ActionMapping mapping,</span></span></span><br><span class="line"><span class="function"><span class="params">			ActionForm form, HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">			HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">		String id=request.getParameter(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">		TrainForm trainForm=(TrainForm)objectDao.getObjectForm(<span class="string">&quot;from TrainForm where id=&#x27;&quot;</span>+id+<span class="string">&quot;&#x27;&quot;</span>);</span><br><span class="line">		request.setAttribute(<span class="string">&quot;trainForm&quot;</span>, trainForm);</span><br><span class="line">		<span class="keyword">return</span> mapping.findForward(<span class="string">&quot;queryOneTrain&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h4 id="薪资管理-1"><a href="#薪资管理-1" class="headerlink" title="薪资管理"></a>薪资管理</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.wy.action;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpSession;</span><br><span class="line"><span class="keyword">import</span> org.apache.struts.action.ActionForm;</span><br><span class="line"><span class="keyword">import</span> org.apache.struts.action.ActionForward;</span><br><span class="line"><span class="keyword">import</span> org.apache.struts.action.ActionMapping;</span><br><span class="line"><span class="keyword">import</span> org.apache.struts.actions.DispatchAction;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.wy.dao.ObjectDao;</span><br><span class="line"><span class="keyword">import</span> com.wy.form.DepartmentForm;</span><br><span class="line"><span class="keyword">import</span> com.wy.form.EmployeeForm;</span><br><span class="line"><span class="keyword">import</span> com.wy.form.ManagerForm;</span><br><span class="line"><span class="keyword">import</span> com.wy.form.PayForm;</span><br><span class="line"><span class="keyword">import</span> com.wy.tool.GetAutoNumber;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PayAction</span> <span class="keyword">extends</span> <span class="title">DispatchAction</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> ObjectDao objectDao;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ObjectDao <span class="title">getObjectDao</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> objectDao;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setObjectDao</span><span class="params">(ObjectDao objectDao)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.objectDao = objectDao;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//薪资删除</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ActionForward <span class="title">deletePay</span><span class="params">(ActionMapping mapping,</span></span></span><br><span class="line"><span class="function"><span class="params">			ActionForm form, HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">			HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">		String condition = <span class="string">&quot;from PayForm where id=&#x27;&quot;</span>+request.getParameter(<span class="string">&quot;id&quot;</span>)+<span class="string">&quot;&#x27;&quot;</span>;</span><br><span class="line">		PayForm payForm=(PayForm)objectDao.getObjectForm(condition);</span><br><span class="line">		<span class="keyword">if</span>(payForm!=<span class="keyword">null</span>)</span><br><span class="line">		objectDao.deleteObjectForm(payForm);</span><br><span class="line">		<span class="keyword">return</span> queryPay(mapping,form,request,response);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 薪资查看</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ActionForward <span class="title">queryPay</span><span class="params">(ActionMapping mapping,</span></span></span><br><span class="line"><span class="function"><span class="params">			ActionForm form, HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">			HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">		List list = objectDao.getObjectList(<span class="string">&quot;from PayForm&quot;</span>);	</span><br><span class="line">		<span class="keyword">if</span>(request.getParameter(<span class="string">&quot;emNumber&quot;</span>)!=<span class="keyword">null</span>)&#123;</span><br><span class="line">		String emNumber= request.getParameter(<span class="string">&quot;emNumber&quot;</span>);</span><br><span class="line">		list = objectDao.getObjectList(<span class="string">&quot;from PayForm where pay_emNumber=&#x27;&quot;</span>+emNumber+<span class="string">&quot;&#x27;&quot;</span>);	</span><br><span class="line">		request.setAttribute(<span class="string">&quot;result1&quot;</span>,emNumber);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(request.getParameter(<span class="string">&quot;pay_month&quot;</span>)!=<span class="keyword">null</span>)&#123;</span><br><span class="line">		String pay_month= request.getParameter(<span class="string">&quot;pay_month&quot;</span>);</span><br><span class="line">		list = objectDao.getObjectList(<span class="string">&quot;from PayForm where pay_month=&#x27;&quot;</span>+pay_month+<span class="string">&quot;&#x27;&quot;</span>);	</span><br><span class="line">		request.setAttribute(<span class="string">&quot;result2&quot;</span>,pay_month);	</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		request.setAttribute(<span class="string">&quot;list&quot;</span>, list);</span><br><span class="line">		String condition = <span class="string">&quot;from EmployeeForm order by id desc&quot;</span>;</span><br><span class="line">		request.setAttribute(<span class="string">&quot;employeeList&quot;</span>,objectDao.getObjectList(condition));</span><br><span class="line">		<span class="keyword">return</span> mapping.findForward(<span class="string">&quot;queryPay&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 转向添加新姿的页面</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ActionForward <span class="title">forwardInsertPay</span><span class="params">(ActionMapping mapping,</span></span></span><br><span class="line"><span class="function"><span class="params">			ActionForm form, HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">			HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.saveToken(request);</span><br><span class="line">		String condition = <span class="string">&quot;from EmployeeForm order by id desc&quot;</span>;</span><br><span class="line">		List list = objectDao.getObjectList(condition);</span><br><span class="line">		request.setAttribute(<span class="string">&quot;employeeList&quot;</span>,list);</span><br><span class="line">		<span class="keyword">return</span> mapping.findForward(<span class="string">&quot;forwardInsertPay&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 添加薪资</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ActionForward <span class="title">savePay</span><span class="params">(ActionMapping mapping, ActionForm form,</span></span></span><br><span class="line"><span class="function"><span class="params">			HttpServletRequest request, HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">		PayForm payForm = (PayForm) form;</span><br><span class="line">		String payCondition= <span class="string">&quot;from PayForm where pay_month=&#x27;&quot;</span>+payForm.getPay_month()+<span class="string">&quot;&#x27; and pay_emNumber=&#x27;&quot;</span>+payForm.getPay_emNumber()+<span class="string">&quot;&#x27;&quot;</span>;</span><br><span class="line">		<span class="keyword">if</span>(objectDao.getObjectForm(payCondition)!=<span class="keyword">null</span>)&#123;</span><br><span class="line">			request.setAttribute(<span class="string">&quot;result&quot;</span>, <span class="string">&quot;该员工已经工资已经发送完毕&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> mapping.findForward(<span class="string">&quot;operationPay&quot;</span>);</span><br><span class="line">		&#125;	</span><br><span class="line">		String emCondition = <span class="string">&quot;from EmployeeForm where em_serialNumber=&#x27;&quot;</span>+payForm.getPay_emNumber()+<span class="string">&quot;&#x27;&quot;</span>;</span><br><span class="line">		EmployeeForm employeeForm= (EmployeeForm)objectDao.getObjectForm(emCondition);</span><br><span class="line">		payForm.setPay_emName(employeeForm.getEm_name());</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.isTokenValid(request)) &#123;</span><br><span class="line">			<span class="keyword">this</span>.resetToken(request);		</span><br><span class="line">			objectDao.insertObjectForm(payForm);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">this</span>.saveToken(request);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> queryPay(mapping, form, request, response);</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h2 id="07-使用说明"><a href="#07-使用说明" class="headerlink" title="07 使用说明"></a>07 使用说明</h2><ul>
 <li>mysql导入sql文件，修改（WebContent\WEB-INF\applicationContext.xml）applicationContext.xml文件修改数据库配置信息。</li>
 <li>eclipse导入项目并部署，tomcat部署后，访问<a target="_blank" rel="noopener" href="http://localhost:8080/PersonManager/%EF%BC%8C%E7%94%A8%E6%88%B7%E5%90%8D%EF%BC%9Aadain%EF%BC%8C%E5%AF%86%E7%A0%81%EF%BC%9A123">http://localhost:8080/PersonManager/，用户名：adain，密码：123</a></li>
 </ul>
 <h2 id="08-源码下载"><a href="#08-源码下载" class="headerlink" title="08 源码下载"></a>08 源码下载</h2><p>关注公众号【C you again】，回复“基于SSH框架的人力资源管理”免费领取。<br>亦可直接扫描主页二维码关注，回复“基于SSH框架的人力资源管理”免费领取，<a target="_blank" rel="noopener" href="https://gzh.cyouagain.cn/">点此打开个人主页</a></p>
-<p><img src="https://img-blog.csdnimg.cn/20200825104331765.jpg#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200825104331765.jpg#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200825104331765.jpg#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200825104331765.jpg#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 <p><strong>说明：此源码来源于网络，若有侵权，请联系删除！！</strong></p>
 
   
@@ -540,7 +484,7 @@
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="\posts\21025.html" title="基于java的企业进销存管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200826130307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200826130307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于java的企业进销存管理系统</span><span class="excerpt">基于java的企业进销存管理系统</span></a><a class="item" href="\posts\31183.html" title="基于SSM框架的JavaWeb通用权限管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200825222028100.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200825222028100.png#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于SSM框架的JavaWeb通用权限管理系统</span><span class="excerpt">Jsp 、SSM（Spring + Spring-MVC + Mybatis）、Shiro 、Mvc、Jdbc、MySQL...</span></a><a class="item" href="\posts\5070.html" title="基于ssm的客户管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/2020082515561175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020082515561175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于ssm的客户管理系统</span><span class="excerpt">ssm + jdk1.8 + mysql5.4实现客户管理系统</span></a><a class="item" href="\posts\17978.html" title="网站、网页资源快速收录百度API提交助手" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20201005231721964.jpg#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20201005231721964.jpg#pic_left" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">网站、网页资源快速收录百度API提交助手</span><span class="excerpt">网站、网页资源快速收录百度API提交助手，在线提交，SEO网站优化</span></a><a class="item" href="\posts\5780.html" title="JavaWeb 图书管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200824155218898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824155218898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">JavaWeb 图书管理系统</span><span class="excerpt">springboot + jpa + mybatis + springsecurity +javaex实现图书管理系统</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="\posts\31183.html" title="基于SSM框架的JavaWeb通用权限管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200825222028100.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200825222028100.png#pic_center" srcset="data:image/png;base64,666" /><span class="title">基于SSM框架的JavaWeb通用权限管理系统</span><span class="excerpt">Jsp 、SSM（Spring + Spring-MVC + Mybatis）、Shiro 、Mvc、Jdbc、MySQL...</span></a><a class="item" href="\posts\21025.html" title="基于java的企业进销存管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200826130307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200826130307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" /><span class="title">基于java的企业进销存管理系统</span><span class="excerpt">基于java的企业进销存管理系统</span></a><a class="item" href="\posts\5070.html" title="基于ssm的客户管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/2020082515561175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020082515561175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" /><span class="title">基于ssm的客户管理系统</span><span class="excerpt">ssm + jdk1.8 + mysql5.4实现客户管理系统</span></a><a class="item" href="\posts\17978.html" title="网站、网页资源快速收录百度API提交助手" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20201005231721964.jpg#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20201005231721964.jpg#pic_left" srcset="data:image/png;base64,666" /><span class="title">网站、网页资源快速收录百度API提交助手</span><span class="excerpt">网站、网页资源快速收录百度API提交助手，在线提交，SEO网站优化</span></a><a class="item" href="\posts\46042.html" title="Java GUI_图书管理系统设计与实现" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200824205253483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824205253483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" /><span class="title">Java GUI_图书管理系统设计与实现</span><span class="excerpt">java awt +MySql+eclipse/idea 实现图书管理系统</span></a></div></section></div>
       
       
         <div class='copyright'>
@@ -593,7 +537,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -605,7 +549,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -617,7 +561,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -769,6 +713,11 @@ ssm + jdk1.8 ...</p>
             ><div class='name'>IT技术圈</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E6%B5%99%E5%A4%A7%E7%89%88%E3%80%8AC%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E3%80%8B%E9%A2%98%E7%9B%AE%E9%9B%86/" href="/categories/%E6%B5%99%E5%A4%A7%E7%89%88%E3%80%8AC%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E3%80%8B%E9%A2%98%E7%9B%AE%E9%9B%86/"
+            id="categoriesE6B599E5A4A7E78988E3808ACE8AFADE8A880E7A88BE5BA8FE8AEBEE8AEA1EFBC88E7ACAC3E78988EFBC89E3808BE9A298E79BAEE99B86"
+            ><div class='name'>浙大版《C语言程序设计（第3版）》题目集</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/" href="/categories/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/"
             id="categoriesE7B3BBE7BB9FE6BA90E7A081"
             ><div class='name'>系统源码</div><div class='badge'>(12)</div></a></li>
@@ -795,7 +744,7 @@ ssm + jdk1.8 ...</p>
 
 
     <div class='content'>
-      <a href="/tags/ERP%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">ERP管理系统</a> <a href="/tags/HTML5%E5%B0%8F%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">HTML5小游戏</a> <a href="/tags/SEO%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">SEO网站优化</a> <a href="/tags/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">人力资源管理系统</a> <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 16.5px; color: #888">后端开发</a> <a href="/tags/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 19px; color: #777">图书管理系统</a> <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">客户管理系统</a> <a href="/tags/%E5%AE%BF%E8%88%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">宿舍管理系统</a> <a href="/tags/%E5%AF%9D%E5%AE%A4%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">寝室管理系统</a> <a href="/tags/%E6%9C%BA%E7%A5%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 16.5px; color: #888">机票管理系统</a> <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">权限管理系统</a> <a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E4%BA%AB/" style="font-size: 24px; color: #555">源码分享</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/" style="font-size: 21.5px; color: #666">系统源码</a> <a href="/tags/%E8%B4%AA%E5%90%83%E8%9B%87/" style="font-size: 14px; color: #999">贪吃蛇</a> <a href="/tags/%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">销存管理系统</a>
+      <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 14px; color: #999">C语言</a> <a href="/tags/ERP%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">ERP管理系统</a> <a href="/tags/HTML5%E5%B0%8F%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">HTML5小游戏</a> <a href="/tags/SEO%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">SEO网站优化</a> <a href="/tags/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">人力资源管理系统</a> <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 16.5px; color: #888">后端开发</a> <a href="/tags/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 19px; color: #777">图书管理系统</a> <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">客户管理系统</a> <a href="/tags/%E5%AE%BF%E8%88%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">宿舍管理系统</a> <a href="/tags/%E5%AF%9D%E5%AE%A4%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">寝室管理系统</a> <a href="/tags/%E6%9C%BA%E7%A5%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 16.5px; color: #888">机票管理系统</a> <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">权限管理系统</a> <a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E4%BA%AB/" style="font-size: 24px; color: #555">源码分享</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" style="font-size: 14px; color: #999">程序设计</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/" style="font-size: 21.5px; color: #666">系统源码</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">编程</a> <a href="/tags/%E8%B4%AA%E5%90%83%E8%9B%87/" style="font-size: 14px; color: #999">贪吃蛇</a> <a href="/tags/%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">销存管理系统</a>
     </div>
   </section>
 
@@ -806,6 +755,24 @@ ssm + jdk1.8 ...</p>
 </aside>
 
 
+
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="基于SSH框架的人力资源管理系统设计与实现";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.add("show");
+  
+</script>
 
         
       </div>
@@ -829,30 +796,93 @@ ssm + jdk1.8 ...</p>
       
     
   </footer>
-  
-  
-   <!--百度统计的代码-->
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?a93f6200bb892cd5ad339be4cb62db0f";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
 
 
-  
-  
-  
-
-
-      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
     </div>
   </div>
   <div>
-    <!-- required -->
+    <script>
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  
+  
+</script>
+<!-- required -->
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
 
@@ -917,7 +947,6 @@ var _hmt = _hmt || [];
 <script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
 
     <script type="text/javascript">
-      $(function(){
         var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
@@ -932,22 +961,17 @@ var _hmt = _hmt || [];
           }
           shuffle(imgs);
         }
-        if ('.cover-backstretch') {
-          $('.cover-backstretch').backstretch(
+	  function Pjax_backstretch(){
+        
+          $('#cover-backstretch').backstretch(
             imgs,
           {
             duration: "10000",
             fade: "1500"
           });
-        } else {
-          $.backstretch(
-            imgs,
-          {
-            duration: "10000",
-            fade: "1500"
-          });
-        }
-      });
+        
+	  }
+	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
     </script>
   
 
@@ -1119,9 +1143,9 @@ var _hmt = _hmt || [];
   function pjax_valine() {
     if(!document.querySelectorAll("#valine_container")[0])return;
 
-    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "快来评论吧~";
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
 
-    let path = $.trim($('#pjax-comment-path').text());
+    let path = pdata.commentPath;
     if (path.length == 0) {
       let defaultPath = '';
       path = defaultPath || decodeURI(window.location.pathname);
@@ -1142,7 +1166,7 @@ var _hmt = _hmt || [];
       highlight: 'true',
       mathJax: 'false',
       enableQQ: 'true',
-      recordIP: false,
+      recordIP: 'false',
       requiredFields: requiredFields,
       emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
       emojiMaps: emojiMaps
@@ -1157,91 +1181,6 @@ var _hmt = _hmt || [];
 
 
 
-  
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js" aysc></script>
-
-<script type="text/javascript">
-function getClientHeight(){
-  var clientHeight=0;
-  if(document.body.clientHeight&&document.documentElement.clientHeight){
-  var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
-  }else{
-  var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
-  }
-  return clientHeight;
-}
-function supportCss3(style) {
-  var prefix = ['webkit', 'Moz', 'ms', 'o'],
-  i,
-  humpString = [],
-  htmlStyle = document.documentElement.style,
-  _toHumb = function (string) {
-  return string.replace(/-(\w)/g, function ($0, $1) {
-  return $1.toUpperCase();
-  });
-  };
-  for (i in prefix)
-  humpString.push(_toHumb(prefix[i] + '-' + style));
-  humpString.push(_toHumb(style));
-  for (i in humpString)
-  if (humpString[i] in htmlStyle) return true;
-  return false;
-};
-//配置信息
-var options = {
-  bottom: '32px',
-  right: 'unset',
-  left: '16px',
-  time: '0s',
-  mixColor: '#f4f4f4',
-  backgroundColor: '#f4f4f4',
-  buttonColorDark: '#333',
-  buttonColorLight: '#ddd',
-  saveInCookies: true,
-  label: '',
-  autoMatchOsTheme: true
-};
-// 卡片兼容处理 mix-blend-mode 与 effect: [blur] 冲突
-
-function pjax_darkmodejs(){
-  
-  if(!supportCss3('mix-blend-mode'))return;
-  var checkExist2 = setInterval(function() {
-     if (typeof jQuery == 'undefined'){return;}
-     clearInterval(checkExist2);
-     var TopFlag=getClientHeight();
-    $(window).scroll(function(){
-      var top = $(document).scrollTop();
-      if(top > TopFlag) {
-        $(".darkmode-layer").css("mix-blend-mode","normal");
-        $(".darkmode-layer").css("background-color","#222");
-      }else{
-        $(".darkmode-layer").css("mix-blend-mode","difference");
-        $(".darkmode-layer").css("background-color","");
-      }
-    })
-  }, 100);
-  
-}
-// mix-blend-mode support?
-if(supportCss3('mix-blend-mode')){
-  window.darkmode = new Darkmode(options);
-  
-  window.darkmode.showWidget();
-  
-  pjax_darkmodejs();
-}
-////////////////Development///////////////////////
-//////////////darkmode模式切换////////////////////
-//window.darkmode.toggle();                     //
-//////////////darkmode模式判断////////////////////
-//console.log(window.darkmode.isActivated())    //
-//////////////////////////////////////////////////
-</script>
-
-
-
-
   <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
@@ -1250,27 +1189,31 @@ if(supportCss3('mix-blend-mode')){
 
 
 
-
-  
-    
-<script src="/js/search.js"></script>
-
-  
-
-
 <!-- optional -->
 
   <script>
 const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
 const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
-(function ($) {
+
+$('.input.u-search-input').one('focus',function(){
+	
+		loadScript('/js/search/hexo.js',setSearchService);
+	
+})
+
+function listenSearch(){
   
     customSearch = new HexoSearch({
       imagePath: SearchServiceimagePath
     });
   
-})(jQuery);
-
+}
+function setSearchService() {
+	listenSearch();
+	
+		document.addEventListener("pjax:success", listenSearch);
+	
+}
 </script>
 
 
@@ -1493,7 +1436,193 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 
 
 
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "user-color-scheme";
+const rootElementDarkModeAttributeName = "data-user-color-scheme";
+
+const setLS = (k, v) => {
+  try {
+    localStorage.setItem(k, v);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const removeLS = (k) => {
+  try {
+    localStorage.removeItem(k);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const getLS = (k) => {
+  try {
+    return localStorage.getItem(k);
+  } catch (e) {
+    console.log(e.message);
+    return null;
+  }
+};
+
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+
+/**
+ * get target mode
+ */
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+
+/**
+ * bind click event for toggle button
+ */
+function bindToggleButton() {
+	var btn=$("#wrapper .toggle-mode-btn");
+    btn.on('click',(e) => {
+      const mode = toggleCustomDarkMode();
+      applyCustomDarkModeSettings(mode);
+    });
+}
+
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", bindToggleButton);
+document.addEventListener("pjax:success", bindToggleButton);
+
+</script>
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
 <!-- more -->
+
+
 
 
     
@@ -1501,6 +1630,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 
 
 <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
 
 <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
 
@@ -1519,6 +1649,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
   
 </div>
 
+
 <script>
     var pjax;
     document.addEventListener('DOMContentLoaded', function () {
@@ -1526,6 +1657,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
         elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
         selectors: [
           "title",
+          "#l_cover",
           "#pjax-container",
           "#pjax-header-nav-list"
         ],
@@ -1535,7 +1667,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
     });
 
     document.addEventListener('pjax:send', function (e) {
-      window.stop(); // 相当于点击了浏览器的停止按钮
+      //window.stop(); // 相当于点击了浏览器的停止按钮
 
       try {
         var currentUrl = window.location.pathname;
@@ -1554,31 +1686,34 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
       if (typeof $.fancybox != "undefined") {
         $.fancybox.close();    // 关闭弹窗
       }
-      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
-      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
-      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
 
       // 解绑事件 避免重复监听
-      $('.s-top').unbind('click');
+      volantis.$topBtn.unbind('click');
       $('.menu a').unbind('click');
       $(window).unbind('resize');
       $(window).unbind('scroll');
       $(document).unbind('scroll');
       $(document).unbind('click');
       $('body').unbind('click');
+	  
       window.ShowLoading();
+	  
     });
 
     document.addEventListener('pjax:complete', function () {
       // 关于百度统计对 SPA 页面的处理：
       // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
       // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
-      // 
+       
 
       // 关于谷歌统计对 SPA 页面的处理：
       // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
       // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
       
+	 
 
       $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
       $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
@@ -1592,22 +1727,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
             pjax_fancybox();
           }
         
-          
-          if ('.cover-backstretch') {
-            $('.cover-backstretch').backstretch("resize");
-            if($('.cover-wrapper').is(':hidden')){
-              $('.cover-backstretch').backstretch("pause");
-            }else{
-              $('.cover-backstretch').backstretch("next");
-            }
-          } else {
-            $.backstretch("resize");
-            if($('.cover-wrapper').is(':hidden')){
-              $.backstretch("pause");
-            }else{
-              $.backstretch("next");
-            }
-          }
+		  Pjax_backstretch()
         
         
         
@@ -1624,16 +1744,18 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
         
         
         
-          pjax_darkmodejs();
-        
       } catch (e) {
         console.log(e);
       }
+	  
       window.HideLoading();
+	  
     });
 
     document.addEventListener('pjax:error', function (e) {
+	  
       window.HideLoading();
+	  
       window.location.href = e.triggerElement.href;
     });
 </script>

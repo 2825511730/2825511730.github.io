@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0'>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
     
   
   <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta http-equiv='x-dns-prefetch-control' content='on' />
 
   <!-- 页面元数据 -->
   
@@ -35,59 +37,38 @@
   
 
   <!-- link -->
-  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
-
-  
-  
-
-  
-
-  
-
-  
-
   
 
   <!-- import link -->
   
 
   
-  
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/first.css">
 
   
+
   
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
   
-  <!-- 脚本懒加载函数 -->
-  <script>
-  function loadScript(src, cb) {
-    var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
-    var script = document.createElement('script');
-    script.setAttribute('type','text/javascript');
-    if (cb) script.onload = cb;
-    script.setAttribute('src', src);
-    HEAD.appendChild(script);
-  }
-  //https://github.com/filamentgroup/loadCSS
-  !function(c){"use strict";var e=function(e,t,n,r){var o,i=c.document,a=i.createElement("link");if(t)o=t;else{var d=(i.body||i.getElementsByTagName("head")[0]).childNodes;o=d[d.length-1]}var f=i.styleSheets;if(r)for(var l in r)r.hasOwnProperty(l)&&a.setAttribute(l,r[l]);a.rel="stylesheet",a.href=e,a.media="only x",function e(t){if(i.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(a,t?o:o.nextSibling)});var s=function(e){for(var t=a.href,n=f.length;n--;)if(f[n].href===t)return e();setTimeout(function(){s(e)})};function u(){a.addEventListener&&a.removeEventListener("load",u),a.media=n||"all"}return a.addEventListener&&a.addEventListener("load",u),(a.onloadcssdefined=s)(u),a};"undefined"!=typeof exports?exports.loadCSS=e:c.loadCSS=e}("undefined"!=typeof global?global:this);
-  </script>
+
   <script id="loadcss"></script>
+
 </head>
 
 <body>
-  <header class="l_header auto shadow blur " style='opacity: 0' >
+  
+
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
-  <div class='wrapper'>
+  <div id='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
-        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
@@ -294,14 +275,13 @@
   </div>
 </header>
 
-  <div class="l_body">
-    <div class="l_cover">
+  <div id="l_body">
+    <div id="l_cover">
   
     
-    
-        <div class='cover-wrapper post search' style="display: none;">
+        <div id="full" class='cover-wrapper post search' style="display: none;">
           
-            <div class='cover-backstretch'></div>
+            <div id='cover-backstretch'></div>
           
           <div class='cover-body'>
   <div class='top'>
@@ -358,49 +338,14 @@
   </div>
 </div>
 
-          <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
         </div>
     
   
   </div>
-  
-    <div class='safearea'>
-      <div class='body-wrapper' id="pjax-container">
-        
-          <!--此文件用来存放一些不方便取值的变量--> 
-<!--思路大概是将值藏到重加载的区域内--> 
- 
- 
- 
-<div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">true</div> 
-  <div id="pjax-pageTitle">JavaWeb 图书管理系统</div> 
-  <div id="pjax-enable-cover">true</div> 
-  <div id="pjax-comment-path"></div> 
-  <div id="pjax-comment-placeholder"></div> 
-</div> 
- 
- 
-<script> 
-  // 处理封面 此时 jquery 还没加载 
-  if ("none" == "none") { // 移除封面 
-    document.getElementsByClassName('cover-wrapper')[0].style.display = "none"; 
-    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
-  } else { 
-    if ("none" == "half") { // 半屏 
-      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half'); 
-      document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("none" == "full") { // 全屏 
-      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full'); 
-      document.getElementsByClassName('scroll-down')[0].style.display = ""; 
-    } 
-    document.getElementsByClassName('cover-wrapper')[0].style.display = ""; 
-    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show"); 
-  } 
-</script> 
- 
 
-        
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
         
 
 <div class='l_main'>
@@ -510,21 +455,18 @@
 <h2 id="04-运行环境"><a href="#04-运行环境" class="headerlink" title="04  运行环境"></a>04  运行环境</h2><blockquote>
 <p>jdk1.8 + maven3 + mysql5.7</p>
 </blockquote>
-<h2 id="05-功能介绍"><a href="#05-功能介绍" class="headerlink" title="05 功能介绍"></a>05 功能介绍</h2><h4 id="图书管理"><a href="#图书管理" class="headerlink" title="图书管理"></a>图书管理</h4><h5 id="图书列表：显示已经上架的图书信息，可对上架图书进行搜索、修改、删除操作。"><a href="#图书列表：显示已经上架的图书信息，可对上架图书进行搜索、修改、删除操作。" class="headerlink" title="图书列表：显示已经上架的图书信息，可对上架图书进行搜索、修改、删除操作。"></a>图书列表：显示已经上架的图书信息，可对上架图书进行搜索、修改、删除操作。</h5><h5 id="图书上架：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书录入。"><a href="#图书上架：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书录入。" class="headerlink" title="图书上架：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书录入。"></a>图书上架：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书录入。</h5><h4 id="借阅管理"><a href="#借阅管理" class="headerlink" title="借阅管理"></a>借阅管理</h4><h5 id="搜索图书：根据图书名称、作者名称，图书分类等搜索图书。"><a href="#搜索图书：根据图书名称、作者名称，图书分类等搜索图书。" class="headerlink" title="搜索图书：根据图书名称、作者名称，图书分类等搜索图书。"></a>搜索图书：根据图书名称、作者名称，图书分类等搜索图书。</h5><h5 id="借阅图书：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书借阅。"><a href="#借阅图书：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书借阅。" class="headerlink" title="借阅图书：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书借阅。"></a>借阅图书：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书借阅。</h5><h5 id="归还图书：对已经借阅的图书进行归还操作。"><a href="#归还图书：对已经借阅的图书进行归还操作。" class="headerlink" title="归还图书：对已经借阅的图书进行归还操作。"></a>归还图书：对已经借阅的图书进行归还操作。</h5><h4 id="读者管理"><a href="#读者管理" class="headerlink" title="读者管理"></a>读者管理</h4><h5 id="读者列表：显示已经注册的读者用户。"><a href="#读者列表：显示已经注册的读者用户。" class="headerlink" title="读者列表：显示已经注册的读者用户。"></a>读者列表：显示已经注册的读者用户。</h5><h5 id="读者添加：录入用户的昵称、用户名、密码、生日、电话、邮箱等信息添加新用户。"><a href="#读者添加：录入用户的昵称、用户名、密码、生日、电话、邮箱等信息添加新用户。" class="headerlink" title="读者添加：录入用户的昵称、用户名、密码、生日、电话、邮箱等信息添加新用户。"></a>读者添加：录入用户的昵称、用户名、密码、生日、电话、邮箱等信息添加新用户。</h5><h4 id="用户中心"><a href="#用户中心" class="headerlink" title="用户中心"></a>用户中心</h4><h5 id="个人信息：查看、修改个人信息。"><a href="#个人信息：查看、修改个人信息。" class="headerlink" title="个人信息：查看、修改个人信息。"></a>个人信息：查看、修改个人信息。</h5><h5 id="用户管理：对已经添加的用户进行搜索、删除、使用权限信息进行设置。"><a href="#用户管理：对已经添加的用户进行搜索、删除、使用权限信息进行设置。" class="headerlink" title="用户管理：对已经添加的用户进行搜索、删除、使用权限信息进行设置。"></a>用户管理：对已经添加的用户进行搜索、删除、使用权限信息进行设置。</h5><h5 id="添加管理员：录入管理员的昵称、用户名、密码、生日、电话、邮箱等信息添加新管理员。"><a href="#添加管理员：录入管理员的昵称、用户名、密码、生日、电话、邮箱等信息添加新管理员。" class="headerlink" title="添加管理员：录入管理员的昵称、用户名、密码、生日、电话、邮箱等信息添加新管理员。"></a>添加管理员：录入管理员的昵称、用户名、密码、生日、电话、邮箱等信息添加新管理员。</h5><h2 id="06-运行截图"><a href="#06-运行截图" class="headerlink" title="06 运行截图"></a>06 运行截图</h2><h4 id="登录界面"><a href="#登录界面" class="headerlink" title="登录界面"></a>登录界面</h4><p><img src="https://img-blog.csdnimg.cn/20200824155218898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824155218898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<h4 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h4><p><img src="https://img-blog.csdnimg.cn/20200824161417528.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824161417528.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<h4 id="图书列表界面"><a href="#图书列表界面" class="headerlink" title="图书列表界面"></a>图书列表界面</h4><p><img src="https://img-blog.csdnimg.cn/20200824161454178.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824161454178.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<h4 id="添加图书界面"><a href="#添加图书界面" class="headerlink" title="添加图书界面"></a>添加图书界面</h4><p><img src="https://img-blog.csdnimg.cn/20200824161540493.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824161540493.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<h4 id="图书归还界面"><a href="#图书归还界面" class="headerlink" title="图书归还界面"></a>图书归还界面</h4><p><img src="https://img-blog.csdnimg.cn/20200824161628239.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824161628239.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<h4 id="读者列表界面"><a href="#读者列表界面" class="headerlink" title="读者列表界面"></a>读者列表界面</h4><p><img src="https://img-blog.csdnimg.cn/20200824161701562.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824161701562.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<h4 id="个人信息界面"><a href="#个人信息界面" class="headerlink" title="个人信息界面"></a>个人信息界面</h4><p><img src="https://img-blog.csdnimg.cn/20200824161733917.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824161733917.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<h4 id="用户管理界面"><a href="#用户管理界面" class="headerlink" title="用户管理界面"></a>用户管理界面</h4><p><img src="https://img-blog.csdnimg.cn/20200824161922752.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824161922752.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<h2 id="05-功能介绍"><a href="#05-功能介绍" class="headerlink" title="05 功能介绍"></a>05 功能介绍</h2><h4 id="图书管理"><a href="#图书管理" class="headerlink" title="图书管理"></a>图书管理</h4><h5 id="图书列表：显示已经上架的图书信息，可对上架图书进行搜索、修改、删除操作。"><a href="#图书列表：显示已经上架的图书信息，可对上架图书进行搜索、修改、删除操作。" class="headerlink" title="图书列表：显示已经上架的图书信息，可对上架图书进行搜索、修改、删除操作。"></a>图书列表：显示已经上架的图书信息，可对上架图书进行搜索、修改、删除操作。</h5><h5 id="图书上架：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书录入。"><a href="#图书上架：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书录入。" class="headerlink" title="图书上架：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书录入。"></a>图书上架：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书录入。</h5><h4 id="借阅管理"><a href="#借阅管理" class="headerlink" title="借阅管理"></a>借阅管理</h4><h5 id="搜索图书：根据图书名称、作者名称，图书分类等搜索图书。"><a href="#搜索图书：根据图书名称、作者名称，图书分类等搜索图书。" class="headerlink" title="搜索图书：根据图书名称、作者名称，图书分类等搜索图书。"></a>搜索图书：根据图书名称、作者名称，图书分类等搜索图书。</h5><h5 id="借阅图书：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书借阅。"><a href="#借阅图书：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书借阅。" class="headerlink" title="借阅图书：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书借阅。"></a>借阅图书：录入图书信息，输入图书名称、作者、图书分类，页数，定价等数据进行图书借阅。</h5><h5 id="归还图书：对已经借阅的图书进行归还操作。"><a href="#归还图书：对已经借阅的图书进行归还操作。" class="headerlink" title="归还图书：对已经借阅的图书进行归还操作。"></a>归还图书：对已经借阅的图书进行归还操作。</h5><h4 id="读者管理"><a href="#读者管理" class="headerlink" title="读者管理"></a>读者管理</h4><h5 id="读者列表：显示已经注册的读者用户。"><a href="#读者列表：显示已经注册的读者用户。" class="headerlink" title="读者列表：显示已经注册的读者用户。"></a>读者列表：显示已经注册的读者用户。</h5><h5 id="读者添加：录入用户的昵称、用户名、密码、生日、电话、邮箱等信息添加新用户。"><a href="#读者添加：录入用户的昵称、用户名、密码、生日、电话、邮箱等信息添加新用户。" class="headerlink" title="读者添加：录入用户的昵称、用户名、密码、生日、电话、邮箱等信息添加新用户。"></a>读者添加：录入用户的昵称、用户名、密码、生日、电话、邮箱等信息添加新用户。</h5><h4 id="用户中心"><a href="#用户中心" class="headerlink" title="用户中心"></a>用户中心</h4><h5 id="个人信息：查看、修改个人信息。"><a href="#个人信息：查看、修改个人信息。" class="headerlink" title="个人信息：查看、修改个人信息。"></a>个人信息：查看、修改个人信息。</h5><h5 id="用户管理：对已经添加的用户进行搜索、删除、使用权限信息进行设置。"><a href="#用户管理：对已经添加的用户进行搜索、删除、使用权限信息进行设置。" class="headerlink" title="用户管理：对已经添加的用户进行搜索、删除、使用权限信息进行设置。"></a>用户管理：对已经添加的用户进行搜索、删除、使用权限信息进行设置。</h5><h5 id="添加管理员：录入管理员的昵称、用户名、密码、生日、电话、邮箱等信息添加新管理员。"><a href="#添加管理员：录入管理员的昵称、用户名、密码、生日、电话、邮箱等信息添加新管理员。" class="headerlink" title="添加管理员：录入管理员的昵称、用户名、密码、生日、电话、邮箱等信息添加新管理员。"></a>添加管理员：录入管理员的昵称、用户名、密码、生日、电话、邮箱等信息添加新管理员。</h5><h2 id="06-运行截图"><a href="#06-运行截图" class="headerlink" title="06 运行截图"></a>06 运行截图</h2><h4 id="登录界面"><a href="#登录界面" class="headerlink" title="登录界面"></a>登录界面</h4><p><img src="https://img-blog.csdnimg.cn/20200824155218898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824155218898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h4 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h4><p><img src="https://img-blog.csdnimg.cn/20200824161417528.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824161417528.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h4 id="图书列表界面"><a href="#图书列表界面" class="headerlink" title="图书列表界面"></a>图书列表界面</h4><p><img src="https://img-blog.csdnimg.cn/20200824161454178.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824161454178.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h4 id="添加图书界面"><a href="#添加图书界面" class="headerlink" title="添加图书界面"></a>添加图书界面</h4><p><img src="https://img-blog.csdnimg.cn/20200824161540493.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824161540493.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h4 id="图书归还界面"><a href="#图书归还界面" class="headerlink" title="图书归还界面"></a>图书归还界面</h4><p><img src="https://img-blog.csdnimg.cn/20200824161628239.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824161628239.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h4 id="读者列表界面"><a href="#读者列表界面" class="headerlink" title="读者列表界面"></a>读者列表界面</h4><p><img src="https://img-blog.csdnimg.cn/20200824161701562.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824161701562.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h4 id="个人信息界面"><a href="#个人信息界面" class="headerlink" title="个人信息界面"></a>个人信息界面</h4><p><img src="https://img-blog.csdnimg.cn/20200824161733917.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824161733917.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h4 id="用户管理界面"><a href="#用户管理界面" class="headerlink" title="用户管理界面"></a>用户管理界面</h4><p><img src="https://img-blog.csdnimg.cn/20200824161922752.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824161922752.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 <h2 id="07-主要代码"><a href="#07-主要代码" class="headerlink" title="07 主要代码"></a>07 主要代码</h2><h4 id="图书管理-1"><a href="#图书管理-1" class="headerlink" title="图书管理"></a>图书管理</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.book.manager.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.book.manager.entity.Book;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.service.BookService;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.R;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.http.CodeEnum;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.ro.PageIn;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.Api;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiOperation;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span> 用户管理</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Api(tags = &quot;图书管理&quot;)</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/book&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BookController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> BookService bookService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;图书搜索列表&quot;)</span></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/list&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">getBookList</span><span class="params">(<span class="meta">@RequestBody</span> PageIn pageIn)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (pageIn == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> R.fail(CodeEnum.PARAM_ERROR);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,bookService.getBookList(pageIn));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;添加图书&quot;)</span></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/add&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">addBook</span><span class="params">(<span class="meta">@RequestBody</span> Book book)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,bookService.addBook(book));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;编辑图书&quot;)</span></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/update&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">modifyBook</span><span class="params">(<span class="meta">@RequestBody</span> Book book)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,bookService.updateBook(book));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;图书详情&quot;)</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/detail&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">bookDetail</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,bookService.findBookById(id));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;图书详情 根据ISBN获取&quot;)</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/detailByIsbn&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">bookDetailByIsbn</span><span class="params">(String isbn)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,bookService.findBookByIsbn(isbn));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;删除图书&quot;)</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/delete&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">delBook</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        bookService.deleteBook(id);</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h4 id="借阅管理-1"><a href="#借阅管理-1" class="headerlink" title="借阅管理"></a>借阅管理</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.book.manager.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.hutool.core.date.DateUtil;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.entity.Borrow;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.service.BookService;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.service.BorrowService;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.R;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.consts.Constants;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.http.CodeEnum;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.ro.RetBookIn;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.vo.BackOut;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.vo.BookOut;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.Api;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiOperation;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.BeanUtils;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span> 用户管理</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Api(tags = &quot;借阅管理&quot;)</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/borrow&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BorrowController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> BorrowService borrowService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> BookService bookService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;借阅列表&quot;)</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/list&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">getBorrowList</span><span class="params">(Integer userId)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,borrowService.findAllBorrowByUserId(userId));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;借阅图书&quot;)</span></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/add&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">addBorrow</span><span class="params">(<span class="meta">@RequestBody</span> Borrow borrow)</span> </span>&#123;</span><br><span class="line">        Integer result = borrowService.addBorrow(borrow);</span><br><span class="line">        <span class="keyword">if</span> (result == Constants.BOOK_BORROWED) &#123;</span><br><span class="line">            <span class="keyword">return</span> R.success(CodeEnum.BOOK_BORROWED);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (result == Constants.USER_SIZE_NOT_ENOUGH) &#123;</span><br><span class="line">            <span class="keyword">return</span> R.success(CodeEnum.USER_NOT_ENOUGH);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (result == Constants.BOOK_SIZE_NOT_ENOUGH) &#123;</span><br><span class="line">            <span class="keyword">return</span> R.success(CodeEnum.BOOK_NOT_ENOUGH);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,Constants.OK);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;编辑借阅&quot;)</span></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/update&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">modifyBorrow</span><span class="params">(<span class="meta">@RequestBody</span> Borrow borrow)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,borrowService.updateBorrow(borrow));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;借阅详情&quot;)</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/detail&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">borrowDetail</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,borrowService.findById(id));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;删除归还记录&quot;)</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/delete&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">delBorrow</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        borrowService.deleteBorrow(id);</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;已借阅列表&quot;)</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/borrowed&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">borrowedList</span><span class="params">(Integer userId)</span> </span>&#123;</span><br><span class="line">        List&lt;BackOut&gt; outs = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (userId!=<span class="keyword">null</span>&amp;&amp;userId&gt;<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 获取所有 已借阅 未归还书籍</span></span><br><span class="line">            List&lt;Borrow&gt; borrows = borrowService.findBorrowsByUserIdAndRet(userId, Constants.NO);</span><br><span class="line">            <span class="keyword">for</span> (Borrow borrow : borrows) &#123;</span><br><span class="line">                BackOut backOut = <span class="keyword">new</span> BackOut();</span><br><span class="line">                BookOut out = bookService.findBookById(borrow.getBookId());</span><br><span class="line">                BeanUtils.copyProperties(out,backOut);</span><br><span class="line"></span><br><span class="line">                backOut.setBorrowTime(DateUtil.format(borrow.getCreateTime(),Constants.DATE_FORMAT));</span><br><span class="line"></span><br><span class="line">                String endTimeStr = DateUtil.format(borrow.getEndTime(), Constants.DATE_FORMAT);</span><br><span class="line">                backOut.setEndTime(endTimeStr);</span><br><span class="line">                <span class="comment">// 判断是否逾期</span></span><br><span class="line">                String toDay = DateUtil.format(<span class="keyword">new</span> Date(), Constants.DATE_FORMAT);</span><br><span class="line">                <span class="keyword">int</span> i = toDay.compareTo(endTimeStr);</span><br><span class="line">                <span class="keyword">if</span> (i&gt;<span class="number">0</span>) &#123;</span><br><span class="line">                    backOut.setLate(Constants.YES_STR);</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    backOut.setLate(Constants.NO_STR);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                outs.add(backOut);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,outs);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;归还书籍&quot;)</span></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/ret&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">retBook</span><span class="params">(Integer userId, Integer bookId)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 归还图书</span></span><br><span class="line">        borrowService.retBook(userId,bookId);</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>用户管理</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.book.manager.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.hutool.core.bean.BeanUtil;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.core.date.DateUtil;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.core.util.StrUtil;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.entity.Users;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.service.UserService;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.R;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.consts.Constants;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.consts.ConvertUtil;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.http.CodeEnum;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.vo.PageOut;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.ro.PageIn;</span><br><span class="line"><span class="keyword">import</span> com.book.manager.util.vo.UserOut;</span><br><span class="line"><span class="keyword">import</span> com.github.pagehelper.PageInfo;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.Api;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiOperation;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.BeanUtils;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.security.core.context.SecurityContextHolder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span> 用户管理</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Api(tags = &quot;用户管理&quot;)</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/user&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UsersController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;用户列表&quot;)</span></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/list&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">getUsers</span><span class="params">(<span class="meta">@RequestBody</span> PageIn pageIn)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (pageIn == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> R.fail(CodeEnum.PARAM_ERROR);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 封装分页出参对象</span></span><br><span class="line">        PageInfo&lt;Users&gt; userList = userService.getUserList(pageIn);</span><br><span class="line">        PageOut pageOut = <span class="keyword">new</span> PageOut();</span><br><span class="line">        pageOut.setCurrPage(userList.getPageNum());</span><br><span class="line">        pageOut.setPageSize(userList.getPageSize());</span><br><span class="line">        pageOut.setTotal((<span class="keyword">int</span>) userList.getTotal());</span><br><span class="line">        List&lt;UserOut&gt; outs = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (Users users : userList.getList()) &#123;</span><br><span class="line">            UserOut out = <span class="keyword">new</span> UserOut();</span><br><span class="line">            BeanUtils.copyProperties(users,out);</span><br><span class="line">            out.setIdent(ConvertUtil.identStr(users.getIdentity()));</span><br><span class="line">            out.setBirth(DateUtil.format(users.getBirthday(),Constants.DATE_FORMAT));</span><br><span class="line">            outs.add(out);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        pageOut.setList(outs);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,pageOut);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    @ApiOperation(&quot;添加用户&quot;)</span></span><br><span class="line"><span class="comment">//    @PostMapping(&quot;/add&quot;)</span></span><br><span class="line"><span class="comment">//    public R addUsers(@RequestBody Users users) &#123;</span></span><br><span class="line"><span class="comment">//        return R.success(CodeEnum.SUCCESS,userService.addUser(users));</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;添加读者&quot;)</span></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/addReader&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">addReader</span><span class="params">(<span class="meta">@RequestBody</span> Users users)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (users == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> R.fail(CodeEnum.PARAM_ERROR);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 读者默认是普通用户</span></span><br><span class="line">        users.setIsAdmin(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,userService.addUser(users));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;添加管理员&quot;)</span></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/addAdmin&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">addAdmin</span><span class="params">(<span class="meta">@RequestBody</span> Users users)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (users == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> R.fail(CodeEnum.PARAM_ERROR);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 设置管理员权限</span></span><br><span class="line">        users.setIsAdmin(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,userService.addUser(users));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;编辑用户&quot;)</span></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/update&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">modifyUsers</span><span class="params">(<span class="meta">@RequestBody</span> Users users)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,userService.updateUser(users));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;用户详情&quot;)</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/detail&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">userDetail</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        Users user = userService.findUserById(id);</span><br><span class="line">        <span class="keyword">if</span> (user!=<span class="keyword">null</span>) &#123;</span><br><span class="line">            UserOut out = <span class="keyword">new</span> UserOut();</span><br><span class="line">            BeanUtils.copyProperties(user,out);</span><br><span class="line">            out.setBirth(DateUtil.format(user.getBirthday(),Constants.DATE_FORMAT));</span><br><span class="line">            out.setIdent(ConvertUtil.identStr(user.getIdentity()));</span><br><span class="line">            <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,out);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> R.fail(CodeEnum.NOT_FOUND);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;删除用户&quot;)</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/delete&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">delUsers</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        userService.deleteUser(id);</span><br><span class="line">        <span class="keyword">return</span> R.success(CodeEnum.SUCCESS);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;获取当前用户登陆信息&quot;)</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/currUser&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">getCurrUser</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();</span><br><span class="line">        <span class="keyword">if</span> (principal!=<span class="keyword">null</span>) &#123;</span><br><span class="line">            Map&lt;String,Object&gt; map = BeanUtil.beanToMap(principal);</span><br><span class="line">            String username = (String) map.get(<span class="string">&quot;username&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (StrUtil.isNotBlank(username)) &#123;</span><br><span class="line">                Users users = userService.findByUsername(username);</span><br><span class="line">                UserOut out = <span class="keyword">new</span> UserOut();</span><br><span class="line">                BeanUtils.copyProperties(users,out);</span><br><span class="line">                out.setBirth(DateUtil.format(users.getBirthday(),Constants.DATE_FORMAT));</span><br><span class="line">                Integer identity = users.getIdentity();</span><br><span class="line">                String ident = <span class="string">&quot;&quot;</span>;</span><br><span class="line">                <span class="keyword">if</span> (identity == Constants.STUDENT) &#123;</span><br><span class="line">                    ident = Constants.STU_STR;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span> (identity == Constants.TEACHER) &#123;</span><br><span class="line">                    ident = Constants.TEA_STR;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span> (identity == Constants.OTHER) &#123;</span><br><span class="line">                    ident = Constants.OTHER_STR;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span> (identity == Constants.ADMIN) &#123;</span><br><span class="line">                    ident = Constants.ADMIN_STR;</span><br><span class="line">                &#125;</span><br><span class="line">                out.setIdent(ident);</span><br><span class="line">                <span class="keyword">return</span> R.success(CodeEnum.SUCCESS,out);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> R.fail(CodeEnum.USER_NOT_FOUND);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h2 id="08-使用说明"><a href="#08-使用说明" class="headerlink" title="08 使用说明"></a>08 使用说明</h2><ol>
 <li>本地搭建好java8环境,数据库MySQL5.5+；</li>
 <li>导入sql文件至数据库中，修改数据连接(你自己库名，用户名，密码等)；</li>
@@ -539,7 +481,7 @@
 <li>检查maven是否配置好</li>
 </ul>
 <h2 id="10-源码下载"><a href="#10-源码下载" class="headerlink" title="10 源码下载"></a>10 源码下载</h2><p>关注公众号【C you again】，回复“JavaWeb 图书管理系统”免费领取。<br>亦可直接扫描主页二维码关注，回复“JavaWeb 图书管理系统”免费领取，<a target="_blank" rel="noopener" href="https://gzh.cyouagain.cn/">点此打开个人主页</a></p>
-<p><img src="https://img-blog.csdnimg.cn/20200824171745401.jpg#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824171745401.jpg#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200824171745401.jpg#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824171745401.jpg#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 <p><strong>说明：此源码来源于网络，若有侵权，请联系删除！！</strong></p>
 
   
@@ -554,7 +496,7 @@
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="\posts\46042.html" title="Java GUI_图书管理系统设计与实现" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200824205253483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824205253483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Java GUI_图书管理系统设计与实现</span><span class="excerpt">java awt +MySql+eclipse/idea 实现图书管理系统</span></a><a class="item" href="\posts\3700.html" title="图书管理系统设计与实现—看这篇就够了" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200615124404743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200615124404743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">图书管理系统设计与实现—看这篇就够了</span><span class="excerpt">Java+Jsp+Servlet 实现图书管理系统</span></a><a class="item" href="\posts\31763.html" title="基于web的图书管理系统设计与实现（附演示地址）" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200711142212377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200711142212377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于web的图书管理系统设计与实现（附演示地址）</span><span class="excerpt">Java+Jsp+Servlet 实现图书管理系统</span></a><a class="item" href="\posts\65258.html" title="基于SSH框架的人力资源管理系统设计与实现" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于SSH框架的人力资源管理系统设计与实现</span><span class="excerpt">Spring+SpringMVC+Hibernate实现人力资源管理系统</span></a><a class="item" href="\posts\21025.html" title="基于java的企业进销存管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200826130307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200826130307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于java的企业进销存管理系统</span><span class="excerpt">基于java的企业进销存管理系统</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="\posts\46042.html" title="Java GUI_图书管理系统设计与实现" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200824205253483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824205253483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" /><span class="title">Java GUI_图书管理系统设计与实现</span><span class="excerpt">java awt +MySql+eclipse/idea 实现图书管理系统</span></a><a class="item" href="\posts\3700.html" title="图书管理系统设计与实现—看这篇就够了" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200615124404743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200615124404743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" /><span class="title">图书管理系统设计与实现—看这篇就够了</span><span class="excerpt">Java+Jsp+Servlet 实现图书管理系统</span></a><a class="item" href="\posts\31763.html" title="基于web的图书管理系统设计与实现（附演示地址）" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200711142212377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200711142212377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" /><span class="title">基于web的图书管理系统设计与实现（附演示地址）</span><span class="excerpt">Java+Jsp+Servlet 实现图书管理系统</span></a><a class="item" href="\posts\65258.html" title="基于SSH框架的人力资源管理系统设计与实现" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" /><span class="title">基于SSH框架的人力资源管理系统设计与实现</span><span class="excerpt">Spring+SpringMVC+Hibernate实现人力资源管理系统</span></a><a class="item" href="\posts\31183.html" title="基于SSM框架的JavaWeb通用权限管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200825222028100.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200825222028100.png#pic_center" srcset="data:image/png;base64,666" /><span class="title">基于SSM框架的JavaWeb通用权限管理系统</span><span class="excerpt">Jsp 、SSM（Spring + Spring-MVC + Mybatis）、Shiro 、Mvc、Jdbc、MySQL...</span></a></div></section></div>
       
       
         <div class='copyright'>
@@ -607,7 +549,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -619,7 +561,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -631,7 +573,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -782,6 +724,11 @@
             ><div class='name'>IT技术圈</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E6%B5%99%E5%A4%A7%E7%89%88%E3%80%8AC%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E3%80%8B%E9%A2%98%E7%9B%AE%E9%9B%86/" href="/categories/%E6%B5%99%E5%A4%A7%E7%89%88%E3%80%8AC%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E3%80%8B%E9%A2%98%E7%9B%AE%E9%9B%86/"
+            id="categoriesE6B599E5A4A7E78988E3808ACE8AFADE8A880E7A88BE5BA8FE8AEBEE8AEA1EFBC88E7ACAC3E78988EFBC89E3808BE9A298E79BAEE99B86"
+            ><div class='name'>浙大版《C语言程序设计（第3版）》题目集</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/" href="/categories/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/"
             id="categoriesE7B3BBE7BB9FE6BA90E7A081"
             ><div class='name'>系统源码</div><div class='badge'>(12)</div></a></li>
@@ -808,7 +755,7 @@
 
 
     <div class='content'>
-      <a href="/tags/ERP%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">ERP管理系统</a> <a href="/tags/HTML5%E5%B0%8F%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">HTML5小游戏</a> <a href="/tags/SEO%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">SEO网站优化</a> <a href="/tags/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">人力资源管理系统</a> <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 16.5px; color: #888">后端开发</a> <a href="/tags/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 19px; color: #777">图书管理系统</a> <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">客户管理系统</a> <a href="/tags/%E5%AE%BF%E8%88%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">宿舍管理系统</a> <a href="/tags/%E5%AF%9D%E5%AE%A4%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">寝室管理系统</a> <a href="/tags/%E6%9C%BA%E7%A5%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 16.5px; color: #888">机票管理系统</a> <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">权限管理系统</a> <a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E4%BA%AB/" style="font-size: 24px; color: #555">源码分享</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/" style="font-size: 21.5px; color: #666">系统源码</a> <a href="/tags/%E8%B4%AA%E5%90%83%E8%9B%87/" style="font-size: 14px; color: #999">贪吃蛇</a> <a href="/tags/%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">销存管理系统</a>
+      <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 14px; color: #999">C语言</a> <a href="/tags/ERP%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">ERP管理系统</a> <a href="/tags/HTML5%E5%B0%8F%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">HTML5小游戏</a> <a href="/tags/SEO%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">SEO网站优化</a> <a href="/tags/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">人力资源管理系统</a> <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 16.5px; color: #888">后端开发</a> <a href="/tags/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 19px; color: #777">图书管理系统</a> <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">客户管理系统</a> <a href="/tags/%E5%AE%BF%E8%88%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">宿舍管理系统</a> <a href="/tags/%E5%AF%9D%E5%AE%A4%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">寝室管理系统</a> <a href="/tags/%E6%9C%BA%E7%A5%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 16.5px; color: #888">机票管理系统</a> <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">权限管理系统</a> <a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E4%BA%AB/" style="font-size: 24px; color: #555">源码分享</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" style="font-size: 14px; color: #999">程序设计</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/" style="font-size: 21.5px; color: #666">系统源码</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">编程</a> <a href="/tags/%E8%B4%AA%E5%90%83%E8%9B%87/" style="font-size: 14px; color: #999">贪吃蛇</a> <a href="/tags/%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">销存管理系统</a>
     </div>
   </section>
 
@@ -819,6 +766,24 @@
 </aside>
 
 
+
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="JavaWeb 图书管理系统";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.add("show");
+  
+</script>
 
         
       </div>
@@ -842,30 +807,93 @@
       
     
   </footer>
-  
-  
-   <!--百度统计的代码-->
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?a93f6200bb892cd5ad339be4cb62db0f";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
 
 
-  
-  
-  
-
-
-      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
     </div>
   </div>
   <div>
-    <!-- required -->
+    <script>
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  
+  
+</script>
+<!-- required -->
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
 
@@ -930,7 +958,6 @@ var _hmt = _hmt || [];
 <script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
 
     <script type="text/javascript">
-      $(function(){
         var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
@@ -945,22 +972,17 @@ var _hmt = _hmt || [];
           }
           shuffle(imgs);
         }
-        if ('.cover-backstretch') {
-          $('.cover-backstretch').backstretch(
+	  function Pjax_backstretch(){
+        
+          $('#cover-backstretch').backstretch(
             imgs,
           {
             duration: "10000",
             fade: "1500"
           });
-        } else {
-          $.backstretch(
-            imgs,
-          {
-            duration: "10000",
-            fade: "1500"
-          });
-        }
-      });
+        
+	  }
+	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
     </script>
   
 
@@ -1132,9 +1154,9 @@ var _hmt = _hmt || [];
   function pjax_valine() {
     if(!document.querySelectorAll("#valine_container")[0])return;
 
-    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "快来评论吧~";
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
 
-    let path = $.trim($('#pjax-comment-path').text());
+    let path = pdata.commentPath;
     if (path.length == 0) {
       let defaultPath = '';
       path = defaultPath || decodeURI(window.location.pathname);
@@ -1155,7 +1177,7 @@ var _hmt = _hmt || [];
       highlight: 'true',
       mathJax: 'false',
       enableQQ: 'true',
-      recordIP: false,
+      recordIP: 'false',
       requiredFields: requiredFields,
       emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
       emojiMaps: emojiMaps
@@ -1170,91 +1192,6 @@ var _hmt = _hmt || [];
 
 
 
-  
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js" aysc></script>
-
-<script type="text/javascript">
-function getClientHeight(){
-  var clientHeight=0;
-  if(document.body.clientHeight&&document.documentElement.clientHeight){
-  var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
-  }else{
-  var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
-  }
-  return clientHeight;
-}
-function supportCss3(style) {
-  var prefix = ['webkit', 'Moz', 'ms', 'o'],
-  i,
-  humpString = [],
-  htmlStyle = document.documentElement.style,
-  _toHumb = function (string) {
-  return string.replace(/-(\w)/g, function ($0, $1) {
-  return $1.toUpperCase();
-  });
-  };
-  for (i in prefix)
-  humpString.push(_toHumb(prefix[i] + '-' + style));
-  humpString.push(_toHumb(style));
-  for (i in humpString)
-  if (humpString[i] in htmlStyle) return true;
-  return false;
-};
-//配置信息
-var options = {
-  bottom: '32px',
-  right: 'unset',
-  left: '16px',
-  time: '0s',
-  mixColor: '#f4f4f4',
-  backgroundColor: '#f4f4f4',
-  buttonColorDark: '#333',
-  buttonColorLight: '#ddd',
-  saveInCookies: true,
-  label: '',
-  autoMatchOsTheme: true
-};
-// 卡片兼容处理 mix-blend-mode 与 effect: [blur] 冲突
-
-function pjax_darkmodejs(){
-  
-  if(!supportCss3('mix-blend-mode'))return;
-  var checkExist2 = setInterval(function() {
-     if (typeof jQuery == 'undefined'){return;}
-     clearInterval(checkExist2);
-     var TopFlag=getClientHeight();
-    $(window).scroll(function(){
-      var top = $(document).scrollTop();
-      if(top > TopFlag) {
-        $(".darkmode-layer").css("mix-blend-mode","normal");
-        $(".darkmode-layer").css("background-color","#222");
-      }else{
-        $(".darkmode-layer").css("mix-blend-mode","difference");
-        $(".darkmode-layer").css("background-color","");
-      }
-    })
-  }, 100);
-  
-}
-// mix-blend-mode support?
-if(supportCss3('mix-blend-mode')){
-  window.darkmode = new Darkmode(options);
-  
-  window.darkmode.showWidget();
-  
-  pjax_darkmodejs();
-}
-////////////////Development///////////////////////
-//////////////darkmode模式切换////////////////////
-//window.darkmode.toggle();                     //
-//////////////darkmode模式判断////////////////////
-//console.log(window.darkmode.isActivated())    //
-//////////////////////////////////////////////////
-</script>
-
-
-
-
   <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
@@ -1263,27 +1200,31 @@ if(supportCss3('mix-blend-mode')){
 
 
 
-
-  
-    
-<script src="/js/search.js"></script>
-
-  
-
-
 <!-- optional -->
 
   <script>
 const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
 const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
-(function ($) {
+
+$('.input.u-search-input').one('focus',function(){
+	
+		loadScript('/js/search/hexo.js',setSearchService);
+	
+})
+
+function listenSearch(){
   
     customSearch = new HexoSearch({
       imagePath: SearchServiceimagePath
     });
   
-})(jQuery);
-
+}
+function setSearchService() {
+	listenSearch();
+	
+		document.addEventListener("pjax:success", listenSearch);
+	
+}
 </script>
 
 
@@ -1506,7 +1447,193 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 
 
 
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "user-color-scheme";
+const rootElementDarkModeAttributeName = "data-user-color-scheme";
+
+const setLS = (k, v) => {
+  try {
+    localStorage.setItem(k, v);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const removeLS = (k) => {
+  try {
+    localStorage.removeItem(k);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const getLS = (k) => {
+  try {
+    return localStorage.getItem(k);
+  } catch (e) {
+    console.log(e.message);
+    return null;
+  }
+};
+
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+
+/**
+ * get target mode
+ */
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+
+/**
+ * bind click event for toggle button
+ */
+function bindToggleButton() {
+	var btn=$("#wrapper .toggle-mode-btn");
+    btn.on('click',(e) => {
+      const mode = toggleCustomDarkMode();
+      applyCustomDarkModeSettings(mode);
+    });
+}
+
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", bindToggleButton);
+document.addEventListener("pjax:success", bindToggleButton);
+
+</script>
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
 <!-- more -->
+
+
 
 
     
@@ -1514,6 +1641,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 
 
 <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
 
 <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
 
@@ -1532,6 +1660,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
   
 </div>
 
+
 <script>
     var pjax;
     document.addEventListener('DOMContentLoaded', function () {
@@ -1539,6 +1668,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
         elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
         selectors: [
           "title",
+          "#l_cover",
           "#pjax-container",
           "#pjax-header-nav-list"
         ],
@@ -1548,7 +1678,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
     });
 
     document.addEventListener('pjax:send', function (e) {
-      window.stop(); // 相当于点击了浏览器的停止按钮
+      //window.stop(); // 相当于点击了浏览器的停止按钮
 
       try {
         var currentUrl = window.location.pathname;
@@ -1567,31 +1697,34 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
       if (typeof $.fancybox != "undefined") {
         $.fancybox.close();    // 关闭弹窗
       }
-      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
-      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
-      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
 
       // 解绑事件 避免重复监听
-      $('.s-top').unbind('click');
+      volantis.$topBtn.unbind('click');
       $('.menu a').unbind('click');
       $(window).unbind('resize');
       $(window).unbind('scroll');
       $(document).unbind('scroll');
       $(document).unbind('click');
       $('body').unbind('click');
+	  
       window.ShowLoading();
+	  
     });
 
     document.addEventListener('pjax:complete', function () {
       // 关于百度统计对 SPA 页面的处理：
       // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
       // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
-      // 
+       
 
       // 关于谷歌统计对 SPA 页面的处理：
       // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
       // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
       
+	 
 
       $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
       $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
@@ -1605,22 +1738,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
             pjax_fancybox();
           }
         
-          
-          if ('.cover-backstretch') {
-            $('.cover-backstretch').backstretch("resize");
-            if($('.cover-wrapper').is(':hidden')){
-              $('.cover-backstretch').backstretch("pause");
-            }else{
-              $('.cover-backstretch').backstretch("next");
-            }
-          } else {
-            $.backstretch("resize");
-            if($('.cover-wrapper').is(':hidden')){
-              $.backstretch("pause");
-            }else{
-              $.backstretch("next");
-            }
-          }
+		  Pjax_backstretch()
         
         
         
@@ -1637,16 +1755,18 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
         
         
         
-          pjax_darkmodejs();
-        
       } catch (e) {
         console.log(e);
       }
+	  
       window.HideLoading();
+	  
     });
 
     document.addEventListener('pjax:error', function (e) {
+	  
       window.HideLoading();
+	  
       window.location.href = e.triggerElement.href;
     });
 </script>

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0'>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
     
   
   <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta http-equiv='x-dns-prefetch-control' content='on' />
 
   <!-- 页面元数据 -->
   
@@ -35,59 +37,38 @@
   
 
   <!-- link -->
-  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
-
-  
-  
-
-  
-
-  
-
-  
-
   
 
   <!-- import link -->
   
 
   
-  
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/first.css">
 
   
+
   
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
   
-  <!-- 脚本懒加载函数 -->
-  <script>
-  function loadScript(src, cb) {
-    var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
-    var script = document.createElement('script');
-    script.setAttribute('type','text/javascript');
-    if (cb) script.onload = cb;
-    script.setAttribute('src', src);
-    HEAD.appendChild(script);
-  }
-  //https://github.com/filamentgroup/loadCSS
-  !function(c){"use strict";var e=function(e,t,n,r){var o,i=c.document,a=i.createElement("link");if(t)o=t;else{var d=(i.body||i.getElementsByTagName("head")[0]).childNodes;o=d[d.length-1]}var f=i.styleSheets;if(r)for(var l in r)r.hasOwnProperty(l)&&a.setAttribute(l,r[l]);a.rel="stylesheet",a.href=e,a.media="only x",function e(t){if(i.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(a,t?o:o.nextSibling)});var s=function(e){for(var t=a.href,n=f.length;n--;)if(f[n].href===t)return e();setTimeout(function(){s(e)})};function u(){a.addEventListener&&a.removeEventListener("load",u),a.media=n||"all"}return a.addEventListener&&a.addEventListener("load",u),(a.onloadcssdefined=s)(u),a};"undefined"!=typeof exports?exports.loadCSS=e:c.loadCSS=e}("undefined"!=typeof global?global:this);
-  </script>
+
   <script id="loadcss"></script>
+
 </head>
 
 <body>
-  <header class="l_header auto shadow blur " style='opacity: 0' >
+  
+
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
-  <div class='wrapper'>
+  <div id='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
-        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
@@ -294,14 +275,13 @@
   </div>
 </header>
 
-  <div class="l_body">
-    <div class="l_cover">
+  <div id="l_body">
+    <div id="l_cover">
   
     
-    
-        <div class='cover-wrapper post search' style="display: none;">
+        <div id="full" class='cover-wrapper post search' style="display: none;">
           
-            <div class='cover-backstretch'></div>
+            <div id='cover-backstretch'></div>
           
           <div class='cover-body'>
   <div class='top'>
@@ -358,49 +338,14 @@
   </div>
 </div>
 
-          <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
         </div>
     
   
   </div>
-  
-    <div class='safearea'>
-      <div class='body-wrapper' id="pjax-container">
-        
-          <!--此文件用来存放一些不方便取值的变量--> 
-<!--思路大概是将值藏到重加载的区域内--> 
- 
- 
- 
-<div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">true</div> 
-  <div id="pjax-pageTitle">基于web的机票管理系统设计与实现（二）</div> 
-  <div id="pjax-enable-cover">true</div> 
-  <div id="pjax-comment-path"></div> 
-  <div id="pjax-comment-placeholder"></div> 
-</div> 
- 
- 
-<script> 
-  // 处理封面 此时 jquery 还没加载 
-  if ("none" == "none") { // 移除封面 
-    document.getElementsByClassName('cover-wrapper')[0].style.display = "none"; 
-    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
-  } else { 
-    if ("none" == "half") { // 半屏 
-      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half'); 
-      document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("none" == "full") { // 全屏 
-      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full'); 
-      document.getElementsByClassName('scroll-down')[0].style.display = ""; 
-    } 
-    document.getElementsByClassName('cover-wrapper')[0].style.display = ""; 
-    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show"); 
-  } 
-</script> 
- 
 
-        
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
         
 
 <div class='l_main'>
@@ -492,54 +437,48 @@
 
   
   <h1 id="基于web的机票管理系统"><a href="#基于web的机票管理系统" class="headerlink" title="基于web的机票管理系统"></a>基于web的机票管理系统</h1><p><strong>如果你还没有阅读<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40625778/article/details/107022670">基于web的机票管理系统设计与实现（一）</a>，请点击查看，获取详细资料请关注公众号：C you again</strong></p>
-<h2 id="5-系统详细设计及实现"><a href="#5-系统详细设计及实现" class="headerlink" title="5 系统详细设计及实现"></a>5 系统详细设计及实现</h2><h4 id="5-1-添加航班信息"><a href="#5-1-添加航班信息" class="headerlink" title="5.1 添加航班信息"></a>5.1 添加航班信息</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;系统管理员登录后台系统后，点击侧边栏的航班信息管理按钮会出现下拉列表菜单，继续点击添加航班信息按钮可以进行添加航班信息操作。添加航班时输入航班号、起点、终点、始发机场、到达机场等信息，如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200630115259887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630115259887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br>&nbsp;&nbsp;&nbsp;&nbsp;添加航班信息的过程如下：后台系统管理员进入添加航班信息页面后，填写航班号、起点、终点、始发机场、到达机场等相关信息后点击保存按钮，这是会随机生成flightId并与数据库中已经存在的flightId进行比较，保证航班Id唯一，之后继续判断输入的机票价格，航班座位数等数据是否有效，核对信息的有效性和完整性，最后存入数据库。具体流程如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200630115402765.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630115402765.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><strong>主要代码：</strong></p>
+<h2 id="5-系统详细设计及实现"><a href="#5-系统详细设计及实现" class="headerlink" title="5 系统详细设计及实现"></a>5 系统详细设计及实现</h2><h4 id="5-1-添加航班信息"><a href="#5-1-添加航班信息" class="headerlink" title="5.1 添加航班信息"></a>5.1 添加航班信息</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;系统管理员登录后台系统后，点击侧边栏的航班信息管理按钮会出现下拉列表菜单，继续点击添加航班信息按钮可以进行添加航班信息操作。添加航班时输入航班号、起点、终点、始发机场、到达机场等信息，如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200630115259887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630115259887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br>&nbsp;&nbsp;&nbsp;&nbsp;添加航班信息的过程如下：后台系统管理员进入添加航班信息页面后，填写航班号、起点、终点、始发机场、到达机场等相关信息后点击保存按钮，这是会随机生成flightId并与数据库中已经存在的flightId进行比较，保证航班Id唯一，之后继续判断输入的机票价格，航班座位数等数据是否有效，核对信息的有效性和完整性，最后存入数据库。具体流程如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200630115402765.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630115402765.png" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><strong>主要代码：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;addFlight&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Result <span class="title">addFlight</span><span class="params">(<span class="meta">@RequestBody</span> Flight flight )</span> </span>&#123;</span><br><span class="line">		<span class="comment">//设置日期格式</span></span><br><span class="line">		SimpleDateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyyMMddHHmmss&quot;</span>);</span><br><span class="line">		<span class="comment">// new Date()为获取当前系统时间</span></span><br><span class="line">        flight.setFlightId(<span class="string">&quot;F&quot;</span>+df.format(<span class="keyword">new</span> Date()));  </span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">        	flightManageService.addFlight(flight);</span><br><span class="line">        	<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">true</span>,<span class="string">&quot;添加成功&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">false</span>,<span class="string">&quot;添加失败&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-2-航班信息列表"><a href="#5-2-航班信息列表" class="headerlink" title="5.2 航班信息列表"></a>5.2 航班信息列表</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;系统管理员登录系统后有查看航班列表的权限，航班列表界面有添加航班，删除航班，搜索航班信息，航班信息详情，航班信息修改等功能，具体见下图，各个功能详细说明如表5.1所示。<br><img src="https://img-blog.csdnimg.cn/20200630115701888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630115701888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<p><img src="https://img-blog.csdnimg.cn/20200630115716774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630115716774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><strong>主要代码这里以航班查询功能service层代码为例：</strong></p>
+<h4 id="5-2-航班信息列表"><a href="#5-2-航班信息列表" class="headerlink" title="5.2 航班信息列表"></a>5.2 航班信息列表</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;系统管理员登录系统后有查看航班列表的权限，航班列表界面有添加航班，删除航班，搜索航班信息，航班信息详情，航班信息修改等功能，具体见下图，各个功能详细说明如表5.1所示。<br><img src="https://img-blog.csdnimg.cn/20200630115701888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630115701888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200630115716774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630115716774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><strong>主要代码这里以航班查询功能service层代码为例：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> PageResult <span class="title">search</span><span class="params">(<span class="keyword">int</span> pageNum, <span class="keyword">int</span> pageSize, String searchEntity)</span> </span>&#123;</span><br><span class="line">		PageHelper.startPage(pageNum,pageSize);</span><br><span class="line">		List&lt;Flight&gt; flightsList=flightManageMapper.select(searchEntity);</span><br><span class="line">		Page&lt;Flight&gt; page=(Page&lt;Flight&gt;) flightsList;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> PageResult(page.getTotal(), page.getResult());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-3-订单信息列表"><a href="#5-3-订单信息列表" class="headerlink" title="5.3 订单信息列表"></a>5.3 订单信息列表</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;订单信息列表是订单信息管理模块的一个子功能，展示的是前台所有用户的机票订单信息，如下图所示。系统管理员可以对订单进行查询，删除操作，各个功能详细说明如表5.2所示。<br><img src="https://img-blog.csdnimg.cn/20200630115908692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630115908692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200630115924485.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630115924485.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><strong>主要代码这里以订单删除功能dao层的mapper代码为例：</strong></p>
+<h4 id="5-3-订单信息列表"><a href="#5-3-订单信息列表" class="headerlink" title="5.3 订单信息列表"></a>5.3 订单信息列表</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;订单信息列表是订单信息管理模块的一个子功能，展示的是前台所有用户的机票订单信息，如下图所示。系统管理员可以对订单进行查询，删除操作，各个功能详细说明如表5.2所示。<br><img src="https://img-blog.csdnimg.cn/20200630115908692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630115908692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200630115924485.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630115924485.png" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><strong>主要代码这里以订单删除功能dao层的mapper代码为例：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC <span class="string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span> <span class="string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span> &gt;</span><br><span class="line">&lt;mapper namespace=<span class="string">&quot;com.cafuc.mapper.IOrderManageMapper&quot;</span>&gt;</span><br><span class="line">  &lt;delete id=<span class="string">&quot;delete&quot;</span> parameterType=<span class="string">&quot;String&quot;</span>&gt;</span><br><span class="line">    delete from `order` where order_id in</span><br><span class="line">    &lt;foreach collection=<span class="string">&quot;selectIds&quot;</span> item=<span class="string">&quot;ids&quot;</span> open=<span class="string">&quot;(&quot;</span> close=<span class="string">&quot;)&quot;</span> separator=<span class="string">&quot;,&quot;</span>&gt;</span><br><span class="line">      #&#123;ids&#125;</span><br><span class="line">    &lt;/foreach&gt;</span><br><span class="line">  &lt;/delete&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="5-4-用户信息列表"><a href="#5-4-用户信息列表" class="headerlink" title="5.4 用户信息列表"></a>5.4 用户信息列表</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;用户信息列表是用户信息管理模块的子功能，它是指把前台系统所有注册用户信息以列表的形式展示给后台系统管理员，方便系统管理员精确定位到每一个机票预订系统的使用者，对其进行管理，用户信息列表的界面如下图所示。系统管理员有查找系统使用用户和删除违反平台规定用户的权利，各个功能详细说明如表5.3所示。<br><img src="https://img-blog.csdnimg.cn/20200630120106975.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120106975.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200630120121891.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120121891.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<h4 id="5-4-用户信息列表"><a href="#5-4-用户信息列表" class="headerlink" title="5.4 用户信息列表"></a>5.4 用户信息列表</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;用户信息列表是用户信息管理模块的子功能，它是指把前台系统所有注册用户信息以列表的形式展示给后台系统管理员，方便系统管理员精确定位到每一个机票预订系统的使用者，对其进行管理，用户信息列表的界面如下图所示。系统管理员有查找系统使用用户和删除违反平台规定用户的权利，各个功能详细说明如表5.3所示。<br><img src="https://img-blog.csdnimg.cn/20200630120106975.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120106975.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200630120121891.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120121891.png" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 <p><strong>主要代码以用户搜索功能dao层的mapper代码为例：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC <span class="string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span> <span class="string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span> &gt;</span><br><span class="line">&lt;mapper namespace=<span class="string">&quot;com.cafuc.mapper.IUserManageMapper&quot;</span>&gt;</span><br><span class="line">  &lt;select id=<span class="string">&quot;select&quot;</span> resultType=<span class="string">&quot;com.cafuc.pojo.User&quot;</span>&gt;</span><br><span class="line">     select DISTINCT * from `user` as u where </span><br><span class="line">		u.<span class="function">user_name like <span class="title">concat</span><span class="params">(<span class="string">&#x27;%&#x27;</span>,#&#123;searchEntity&#125;,<span class="string">&#x27;%&#x27;</span>)</span></span></span><br><span class="line"><span class="function">  &lt;/select&gt;</span></span><br><span class="line"><span class="function">&lt;/mapper&gt;</span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-5-留言评论列表"><a href="#5-5-留言评论列表" class="headerlink" title="5.5 留言评论列表"></a>5.5 留言评论列表</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;留言评论是前台系统使用者完成注册后具有的功能，用户可以通过留言评论功能对所购班次机票进行全方位的评价，也可以对其在使用过程中遇到的问题进行反馈，等待工作员处理。后台系统管理员对用户留言具有管理的权限，见下图。各功能详情见表5.4。<br><img src="https://img-blog.csdnimg.cn/20200630120330548.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120330548.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200630120346388.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120346388.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<h4 id="5-5-留言评论列表"><a href="#5-5-留言评论列表" class="headerlink" title="5.5 留言评论列表"></a>5.5 留言评论列表</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;留言评论是前台系统使用者完成注册后具有的功能，用户可以通过留言评论功能对所购班次机票进行全方位的评价，也可以对其在使用过程中遇到的问题进行反馈，等待工作员处理。后台系统管理员对用户留言具有管理的权限，见下图。各功能详情见表5.4。<br><img src="https://img-blog.csdnimg.cn/20200630120330548.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120330548.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200630120346388.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120346388.png" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 <p><strong>主要代码以后台系统留言评论模块controller层DiscussManageController.java类例：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.cafuc.controller;</span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"><span class="keyword">import</span> com.cafuc.pojo.PageResult;</span><br><span class="line"><span class="keyword">import</span> com.cafuc.pojo.Result;</span><br><span class="line"><span class="keyword">import</span> com.cafuc.service.IDiscussManageService;</span><br><span class="line"><span class="keyword">import</span> com.cafuc.service.IOrderManageService;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;discussManage&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DiscussManageController</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Resource</span></span><br><span class="line">	<span class="keyword">private</span> IDiscussManageService discussManageService;</span><br><span class="line">	<span class="meta">@RequestMapping(&quot;search&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> PageResult <span class="title">search</span><span class="params">(<span class="keyword">int</span> pageNum ,<span class="keyword">int</span> pageSize,String searchEntity)</span></span>&#123;</span><br><span class="line">		System.out.println(pageNum+<span class="string">&quot; &quot;</span>+pageSize+<span class="string">&quot; &quot;</span>+searchEntity);</span><br><span class="line">		PageResult pageResult=discussManageService.search(pageNum, pageSize, searchEntity);</span><br><span class="line">		<span class="keyword">return</span> pageResult;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@RequestMapping(&quot;deleteBySelectIds&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Result <span class="title">deleteBySelectIds</span><span class="params">(String []selectIds)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">        	discussManageService.deleteBySelectIds(selectIds);</span><br><span class="line">        	<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">true</span>,<span class="string">&quot;删除成功&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">false</span>,<span class="string">&quot;删除失败&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="5-6-添加广告信息"><a href="#5-6-添加广告信息" class="headerlink" title="5.6 添加广告信息"></a>5.6 添加广告信息</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;广告作为网站的必要元素，在机票系统的前台页面也有广告展示的功能，后台增加了相应的管理模块，界面如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200630120539668.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120539668.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;后台系统添加广告的步骤：管理员登录后台系统后点击广告管理按钮，在出现的下拉列表选项中选择添加广告信息并点击进入广告添加页面，在页面输入广告图片、广告链接，广告说明等信息，点击保存按钮，进行数据校验，检查数据的有效性和完整性，保证数据无误之后将数据信息持久化到mysql数据库。流程图如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200630120617957.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120617957.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><strong>主要代码以后台系统controller层ContentManageController.java类例：</strong></p>
+<h4 id="5-6-添加广告信息"><a href="#5-6-添加广告信息" class="headerlink" title="5.6 添加广告信息"></a>5.6 添加广告信息</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;广告作为网站的必要元素，在机票系统的前台页面也有广告展示的功能，后台增加了相应的管理模块，界面如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200630120539668.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120539668.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;后台系统添加广告的步骤：管理员登录后台系统后点击广告管理按钮，在出现的下拉列表选项中选择添加广告信息并点击进入广告添加页面，在页面输入广告图片、广告链接，广告说明等信息，点击保存按钮，进行数据校验，检查数据的有效性和完整性，保证数据无误之后将数据信息持久化到mysql数据库。流程图如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200630120617957.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120617957.png" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><strong>主要代码以后台系统controller层ContentManageController.java类例：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;addContent&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addContent</span><span class="params">(<span class="meta">@RequestParam(&quot;file&quot;)</span> MultipartFile file,HttpServletRequest request,HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">	<span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		String describe=<span class="string">&quot;&quot;</span>;</span><br><span class="line">		String url=<span class="string">&quot;&quot;</span>;</span><br><span class="line">		String picture=<span class="string">&quot;&quot;</span>;</span><br><span class="line">		<span class="keyword">if</span>(request.getParameter(<span class="string">&quot;describe&quot;</span>)!=<span class="keyword">null</span>) &#123;</span><br><span class="line">			describe=request.getParameter(<span class="string">&quot;describe&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(request.getParameter(<span class="string">&quot;url&quot;</span>)!=<span class="keyword">null</span>) &#123;</span><br><span class="line">			url=request.getParameter(<span class="string">&quot;url&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 判断文件是否为空，空则返回失败页面</span></span><br><span class="line">		<span class="keyword">if</span> (!file.isEmpty()) &#123;</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				<span class="comment">// 获取文件存储路径（绝对路径）</span></span><br><span class="line">				String path = request.getServletContext().getRealPath(<span class="string">&quot;/WEB-INF/file&quot;</span>);</span><br><span class="line">				<span class="comment">// 获取原文件名</span></span><br><span class="line">				String fileName = file.getOriginalFilename();</span><br><span class="line">				<span class="comment">// 创建文件实例</span></span><br><span class="line">				File filePath = <span class="keyword">new</span> File(path, fileName);</span><br><span class="line">				<span class="comment">// 如果文件目录不存在，创建目录</span></span><br><span class="line">				<span class="keyword">if</span> (!filePath.getParentFile().exists()) &#123;</span><br><span class="line">					filePath.getParentFile().mkdirs();</span><br><span class="line">					System.out.println(<span class="string">&quot;创建目录&quot;</span> + filePath);</span><br><span class="line">				&#125;</span><br><span class="line">				picture=filePath+<span class="string">&quot;&quot;</span>;</span><br><span class="line">				<span class="comment">// 写入文件</span></span><br><span class="line">				file.transferTo(filePath);</span><br><span class="line">				Content content=<span class="keyword">new</span> Content();</span><br><span class="line">				<span class="comment">//设置日期格式</span></span><br><span class="line">				SimpleDateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyyMMddHHmmss&quot;</span>);</span><br><span class="line">				<span class="comment">// new Date()为获取当前系统时间</span></span><br><span class="line">				content.setContentId(<span class="string">&quot;C&quot;</span>+df.format(<span class="keyword">new</span> Date()));</span><br><span class="line">				content.setDescribe(describe);</span><br><span class="line">				content.setPicture(picture);</span><br><span class="line">				content.setUrl(url);</span><br><span class="line">			    contentManageServiceImpl.addContent(content);</span><br><span class="line">			    response.sendRedirect(request.getContextPath()+<span class="string">&quot;/admin/list_content.html&quot;</span>);</span><br><span class="line">			&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">				response.sendRedirect(request.getContextPath()+<span class="string">&quot;/admin/add_content.html&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			response.sendRedirect(request.getContextPath()+<span class="string">&quot;/admin/add_content.html&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-7-广告信息列表"><a href="#5-7-广告信息列表" class="headerlink" title="5.7 广告信息列表"></a>5.7 广告信息列表</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;后台系统管理员完成添加广告以后跳转到广告信息列表页面，本页面展示的是添加到数据库的所有广告信息，如下图所示，系统管理员可以通过查询，删除等操作来管理广告信息，详情见表5.5。<br><img src="https://img-blog.csdnimg.cn/20200630120807856.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120807856.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200630120829741.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120829741.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<h4 id="5-8-查看个人信息"><a href="#5-8-查看个人信息" class="headerlink" title="5.8 查看个人信息"></a>5.8 查看个人信息</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;后台系统管理员可以查看个人的用户名，密码，邮箱，手机号等信息，由于时间有限，这里以只实现了查看用户名，密码的功能，见下图所示，其他功能后期添加。<br><img src="https://img-blog.csdnimg.cn/20200630121049702.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121049702.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br>&nbsp;&nbsp;&nbsp;&nbsp;由于系统管理员在登陆系统后把个人信息存到redis数据库中，在页面初始化时从redis数据库中查找处个人信息从到cookie中，查看个人信息就是从cookie中提取数据并设置到页面中，具体代码如下：</p>
+<h4 id="5-7-广告信息列表"><a href="#5-7-广告信息列表" class="headerlink" title="5.7 广告信息列表"></a>5.7 广告信息列表</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;后台系统管理员完成添加广告以后跳转到广告信息列表页面，本页面展示的是添加到数据库的所有广告信息，如下图所示，系统管理员可以通过查询，删除等操作来管理广告信息，详情见表5.5。<br><img src="https://img-blog.csdnimg.cn/20200630120807856.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120807856.png" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200630120829741.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630120829741.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666"></p>
+<h4 id="5-8-查看个人信息"><a href="#5-8-查看个人信息" class="headerlink" title="5.8 查看个人信息"></a>5.8 查看个人信息</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;后台系统管理员可以查看个人的用户名，密码，邮箱，手机号等信息，由于时间有限，这里以只实现了查看用户名，密码的功能，见下图所示，其他功能后期添加。<br><img src="https://img-blog.csdnimg.cn/20200630121049702.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121049702.png" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br>&nbsp;&nbsp;&nbsp;&nbsp;由于系统管理员在登陆系统后把个人信息存到redis数据库中，在页面初始化时从redis数据库中查找处个人信息从到cookie中，查看个人信息就是从cookie中提取数据并设置到页面中，具体代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化</span></span><br><span class="line">$scope.adminEntity=&#123;&#125;;</span><br><span class="line">$scope.init=function () &#123;</span><br><span class="line">	console.log($.cookie(<span class="string">&#x27;key&#x27;</span>));</span><br><span class="line">	adminManageService.init($.cookie(<span class="string">&#x27;key&#x27;</span>)).success(function (res) &#123;</span><br><span class="line">	      console.log(res) </span><br><span class="line">	      $scope.adminEntity=res;</span><br><span class="line">	    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h4 id="5-9-修改个人信息"><a href="#5-9-修改个人信息" class="headerlink" title="5.9 修改个人信息"></a>5.9 修改个人信息</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;后台系统管理员也对用户名，密码，邮箱，手机号等信息进行修改，点击个人信息修改按钮进入页面修改个人信息，修改后点击保存等检查填写的信息无误后提示完成修改，为了确保用户名字段的唯一性，用户名一项无法修改。主要代码以controller层为例:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;editAdmin&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Result <span class="title">editAdmin</span><span class="params">(<span class="meta">@RequestBody</span> AdminUser adminUser)</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			adminManageServiceImpl.editAdmin(adminUser);</span><br><span class="line">			redisTemplate.boundValueOps(adminUser.getUser()).set(adminUser);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">true</span>, <span class="string">&quot;修改成功&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">false</span>, <span class="string">&quot;修改失败&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="5-10-用户登录"><a href="#5-10-用户登录" class="headerlink" title="5.10 用户登录"></a>5.10 用户登录</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;用户在进行机票预定，留言评论等功能时需要登录前台系统后才能进行，在浏览器地址栏输入<a target="_blank" rel="noopener" href="http://localhost:8081/flyTicket-portal-web/default/login.html%E5%9B%9E%E8%BD%A6%E8%BF%9B%E5%85%A5%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%E7%95%8C%E9%9D%A2%E3%80%82">http://localhost:8081/flyTicket-portal-web/default/login.html回车进入如下图所示界面。</a><br><img src="https://img-blog.csdnimg.cn/20200630121327613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121327613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;用户进行到登录界面，输入正确的用户名和密码就可以登录到前台系统，登录顺序图如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200630121401198.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121401198.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><strong>主要代码以controller层代码为例：</strong></p>
+<h4 id="5-10-用户登录"><a href="#5-10-用户登录" class="headerlink" title="5.10 用户登录"></a>5.10 用户登录</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;用户在进行机票预定，留言评论等功能时需要登录前台系统后才能进行，在浏览器地址栏输入<a target="_blank" rel="noopener" href="http://localhost:8081/flyTicket-portal-web/default/login.html%E5%9B%9E%E8%BD%A6%E8%BF%9B%E5%85%A5%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%E7%95%8C%E9%9D%A2%E3%80%82">http://localhost:8081/flyTicket-portal-web/default/login.html回车进入如下图所示界面。</a><br><img src="https://img-blog.csdnimg.cn/20200630121327613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121327613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;用户进行到登录界面，输入正确的用户名和密码就可以登录到前台系统，登录顺序图如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200630121401198.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121401198.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><strong>主要代码以controller层代码为例：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">app.controller(<span class="string">&#x27;portalLoginManageController&#x27;</span>,function($scope,$controller,portalLoginManageService)&#123;</span><br><span class="line">	$controller(<span class="string">&#x27;baseController&#x27;</span>,&#123;$scope:$scope&#125;);</span><br><span class="line">	<span class="comment">//初始化</span></span><br><span class="line">	 $scope.userEntity=&#123;userName:<span class="keyword">null</span>,userPwd:<span class="keyword">null</span>&#125;;</span><br><span class="line">	 $scope.login=function()&#123;</span><br><span class="line">		 <span class="keyword">if</span>($scope.userEntity.userName==<span class="keyword">null</span> || $scope.userEntity.userName.trim()==<span class="string">&quot;&quot;</span>)&#123;</span><br><span class="line">			 alert(<span class="string">&quot;用户名为空&quot;</span>);</span><br><span class="line">		 &#125;</span><br><span class="line">		 <span class="keyword">else</span>&#123;</span><br><span class="line">			 <span class="keyword">if</span>($scope.userEntity.userPwd==<span class="keyword">null</span> || $scope.userEntity.userPwd.trim()==<span class="string">&quot;&quot;</span>)&#123;</span><br><span class="line">				 alert(<span class="string">&quot;密码为空&quot;</span>);</span><br><span class="line">			 &#125;</span><br><span class="line">			 <span class="keyword">else</span>&#123;			 portalLoginManageService.login($scope.userEntity).success(function(res)&#123;</span><br><span class="line">					 <span class="keyword">if</span>(res.result==<span class="keyword">false</span>)&#123;</span><br><span class="line">						 alert(res.message)</span><br><span class="line">					 &#125;</span><br><span class="line">					 <span class="keyword">else</span>&#123;</span><br><span class="line">						 window.location.href=<span class="string">&quot;index.html#?key=&quot;</span>+$scope.userEntity.userName; </span><br><span class="line">					 &#125;</span><br><span class="line">				 &#125;); </span><br><span class="line">			 &#125;</span><br><span class="line">		 &#125;;</span><br><span class="line">	 &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="5-11-航班信息展示"><a href="#5-11-航班信息展示" class="headerlink" title="5.11 航班信息展示"></a>5.11 航班信息展示</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;在浏览器地址栏输入<a target="_blank" rel="noopener" href="http://localhost:8081/flyTicket-portal-web/default/index.html%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%E7%95%8C%E9%9D%A2%EF%BC%8C%E9%A6%96%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E6%89%80%E6%9C%89%E8%88%AA%E7%8F%AD%E4%BF%A1%E6%81%AF%E3%80%82%E6%AF%8F%E4%B8%80%E6%9D%A1%E4%BF%A1%E6%81%AF%E5%8C%85%E5%90%AB%E5%87%BA%E5%8F%91%E5%9F%8E%E5%B8%82%E3%80%81%E5%88%B0%E8%BE%BE%E5%9F%8E%E5%B8%82%E3%80%81%E5%87%BA%E5%8F%91%E6%9C%BA%E5%9C%BA%E3%80%81%E5%88%B0%E8%BE%BE%E6%9C%BA%E5%9C%BA%EF%BC%8C%E5%87%BA%E5%8F%91%E6%97%B6%E9%97%B4%E3%80%81%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4%E3%80%81%E6%9C%BA%E7%A5%A8%E4%BB%B7%E6%A0%BC%E7%AD%89%E4%BF%A1%E6%81%AF%E3%80%82">http://localhost:8081/flyTicket-portal-web/default/index.html出现如下图所示界面，首页面展示所有航班信息。每一条信息包含出发城市、到达城市、出发机场、到达机场，出发时间、到达时间、机票价格等信息。</a><br><img src="https://img-blog.csdnimg.cn/20200630121525490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121525490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<h4 id="5-12-航班信息查询"><a href="#5-12-航班信息查询" class="headerlink" title="5.12 航班信息查询"></a>5.12 航班信息查询</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;用户可以通过航班查询功能精确查找到所需信息，节省时间简化操作。通过输入航班类型、出发时间、出发城市、到达城市等搜索条件实现航班查询。比图以成都为到达城市为例，搜索结果如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200630121619347.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121619347.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><strong>代码以dao层PortalManageMapper.xml类例：</strong></p>
+<h4 id="5-11-航班信息展示"><a href="#5-11-航班信息展示" class="headerlink" title="5.11 航班信息展示"></a>5.11 航班信息展示</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;在浏览器地址栏输入<a target="_blank" rel="noopener" href="http://localhost:8081/flyTicket-portal-web/default/index.html%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%E7%95%8C%E9%9D%A2%EF%BC%8C%E9%A6%96%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E6%89%80%E6%9C%89%E8%88%AA%E7%8F%AD%E4%BF%A1%E6%81%AF%E3%80%82%E6%AF%8F%E4%B8%80%E6%9D%A1%E4%BF%A1%E6%81%AF%E5%8C%85%E5%90%AB%E5%87%BA%E5%8F%91%E5%9F%8E%E5%B8%82%E3%80%81%E5%88%B0%E8%BE%BE%E5%9F%8E%E5%B8%82%E3%80%81%E5%87%BA%E5%8F%91%E6%9C%BA%E5%9C%BA%E3%80%81%E5%88%B0%E8%BE%BE%E6%9C%BA%E5%9C%BA%EF%BC%8C%E5%87%BA%E5%8F%91%E6%97%B6%E9%97%B4%E3%80%81%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4%E3%80%81%E6%9C%BA%E7%A5%A8%E4%BB%B7%E6%A0%BC%E7%AD%89%E4%BF%A1%E6%81%AF%E3%80%82">http://localhost:8081/flyTicket-portal-web/default/index.html出现如下图所示界面，首页面展示所有航班信息。每一条信息包含出发城市、到达城市、出发机场、到达机场，出发时间、到达时间、机票价格等信息。</a><br><img src="https://img-blog.csdnimg.cn/20200630121525490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121525490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h4 id="5-12-航班信息查询"><a href="#5-12-航班信息查询" class="headerlink" title="5.12 航班信息查询"></a>5.12 航班信息查询</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;用户可以通过航班查询功能精确查找到所需信息，节省时间简化操作。通过输入航班类型、出发时间、出发城市、到达城市等搜索条件实现航班查询。比图以成都为到达城市为例，搜索结果如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200630121619347.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121619347.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><strong>代码以dao层PortalManageMapper.xml类例：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC <span class="string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span> <span class="string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span> &gt;</span><br><span class="line">&lt;mapper namespace=<span class="string">&quot;com.cafuc.mapper.IPortalManageMapper&quot;</span>&gt;</span><br><span class="line">  &lt;select id=<span class="string">&quot;select&quot;</span> resultType=<span class="string">&quot;com.cafuc.pojo.Flight&quot;</span>&gt;</span><br><span class="line">     select * from flight as f </span><br><span class="line">      &lt;where&gt;</span><br><span class="line">        &lt;<span class="keyword">if</span> test=<span class="string">&quot;flightStartTime1 !=null and flightStartTime1 !=&#x27;&#x27;&quot;</span>&gt;</span><br><span class="line">          and f.<span class="function">flight_start_time like <span class="title">concat</span><span class="params">(<span class="string">&#x27;%&#x27;</span>,#&#123;flightStartTime1&#125;,<span class="string">&#x27;%&#x27;</span>)</span></span></span><br><span class="line"><span class="function">        &lt;/<span class="keyword">if</span>&gt;</span></span><br><span class="line"><span class="function">        &lt;<span class="keyword">if</span> test</span>=<span class="string">&quot;flightStartPlace !=null and flightStartPlace !=&#x27;&#x27;&quot;</span>&gt;</span><br><span class="line">          and f.<span class="function">flight_start_place like <span class="title">concat</span><span class="params">(<span class="string">&#x27;%&#x27;</span>,#&#123;flightStartPlace&#125;,<span class="string">&#x27;%&#x27;</span>)</span></span></span><br><span class="line"><span class="function">        &lt;/<span class="keyword">if</span>&gt;</span></span><br><span class="line"><span class="function">        &lt;<span class="keyword">if</span> test</span>=<span class="string">&quot;flightEndPlace !=null and flightEndPlace !=&#x27;&#x27;&quot;</span>&gt;</span><br><span class="line">          and f.<span class="function">flight_end_place like <span class="title">concat</span><span class="params">(<span class="string">&#x27;%&#x27;</span>,#&#123;flightEndPlace&#125;,<span class="string">&#x27;%&#x27;</span>)</span></span></span><br><span class="line"><span class="function">        &lt;/<span class="keyword">if</span>&gt;</span></span><br><span class="line"><span class="function">     &lt;/where&gt;</span></span><br><span class="line"><span class="function">  &lt;/select&gt;</span></span><br><span class="line"><span class="function">&lt;/mapper&gt;</span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></table></figure>
-<h4 id="5-13-航班信息详情"><a href="#5-13-航班信息详情" class="headerlink" title="5.13 航班信息详情"></a>5.13 航班信息详情</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;航班信息详情是对某一航班信息的详细情况进行展示，如下图所示。用户点击选定航班，航班详细信息以下拉列表的形式展现给用户。<br><img src="https://img-blog.csdnimg.cn/20200630121759179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121759179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><strong>主要代码如下：</strong></p>
+<h4 id="5-13-航班信息详情"><a href="#5-13-航班信息详情" class="headerlink" title="5.13 航班信息详情"></a>5.13 航班信息详情</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;航班信息详情是对某一航班信息的详细情况进行展示，如下图所示。用户点击选定航班，航班详细信息以下拉列表的形式展现给用户。<br><img src="https://img-blog.csdnimg.cn/20200630121759179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121759179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><strong>主要代码如下：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//保留n位小数</span></span><br><span class="line">	$scope.weishu=function(price,n)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Number(price).toFixed(n);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//下拉详情</span></span><br><span class="line">	$scope.lists=function(flightNumber)&#123;</span><br><span class="line">		<span class="comment">//收缩状态</span></span><br><span class="line">		<span class="keyword">if</span>($(<span class="string">&quot;#F_&quot;</span>+flightNumber).is(<span class="string">&quot;:visible&quot;</span>))&#123;</span><br><span class="line">			$scope.reloadList();</span><br><span class="line">		&#125;</span><br><span class="line">		$(<span class="string">&quot;#F_&quot;</span>+flightNumber).animate(&#123;</span><br><span class="line">		      height:<span class="string">&#x27;toggle&#x27;</span></span><br><span class="line">		    &#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//判断最低价</span></span><br><span class="line">	$scope.minPrice=function(flightHighPrice,flightMiddlePrice,flightBasePrice)&#123;</span><br><span class="line">		<span class="keyword">return</span> (flightHighPrice&lt;=flightMiddlePrice?flightHighPrice:flightMiddlePrice)&lt;=flightBasePrice?(flightHighPrice&lt;=flightMiddlePrice?flightHighPrice:flightMiddlePrice):flightBasePrice</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//判断是否有票</span></span><br><span class="line">	$scope.isKickets=function(kicketsNumber,flightNumber,temp)&#123;</span><br><span class="line">		<span class="comment">/*console.log(flightNumber)*/</span></span><br><span class="line">		<span class="keyword">if</span>(kicketsNumber&gt;<span class="number">0</span>)&#123;</span><br><span class="line">			$(<span class="string">&quot;#&quot;</span>+temp+<span class="string">&quot;_&quot;</span>+flightNumber).css(&#123;</span><br><span class="line">				color:<span class="string">&quot;green&quot;</span></span><br><span class="line">			&#125;);</span><br><span class="line">			<span class="keyword">return</span> <span class="string">&quot;有票&quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			$(<span class="string">&quot;#&quot;</span>+temp+<span class="string">&quot;_&quot;</span>+flightNumber).css(&#123;</span><br><span class="line">				color:<span class="string">&quot;red&quot;</span></span><br><span class="line">			&#125;);</span><br><span class="line">			<span class="keyword">return</span> <span class="string">&quot;无票&quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="5-14-登录用户信息展示"><a href="#5-14-登录用户信息展示" class="headerlink" title="5.14 登录用户信息展示"></a>5.14 登录用户信息展示</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;游客访问前台系统时，在页面头部显示“请登录”字样，如下图所示信息，而网站用户登录后则显示“您好，XXX”字样，如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200630121938901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121938901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<p><img src="https://img-blog.csdnimg.cn/20200630121950414.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121950414.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<h4 id="5-14-登录用户信息展示"><a href="#5-14-登录用户信息展示" class="headerlink" title="5.14 登录用户信息展示"></a>5.14 登录用户信息展示</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;游客访问前台系统时，在页面头部显示“请登录”字样，如下图所示信息，而网站用户登录后则显示“您好，XXX”字样，如下图所示。<br><img src="https://img-blog.csdnimg.cn/20200630121938901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121938901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200630121950414.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630121950414.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 <h4 id="5-15-留言板"><a href="#5-15-留言板" class="headerlink" title="5.15 留言板"></a>5.15 留言板</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;点击前台系统右上角“留言板”按钮进入都留言页面如下图所示。留言评论是前台系统使用者完成注册后具有的功能，用户可以通过留言评论功能对所购班次机票进行全方位的评价，也可以对其在使用过程中遇到的问题进行反馈。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200630122050950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630122050950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><strong>主要代码以前台系统controller层DiscussManageController.java类例：</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20200630122050950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630122050950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><strong>主要代码以前台系统controller层DiscussManageController.java类例：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.cafuc.controller;</span><br><span class="line"><span class="keyword">import</span> java.text.ParseException;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.collections.FastArrayList;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.RedisTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestBody;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"><span class="keyword">import</span> com.cafuc.pojo.Discuss;</span><br><span class="line"><span class="keyword">import</span> com.cafuc.pojo.Flight;</span><br><span class="line"><span class="keyword">import</span> com.cafuc.pojo.PageResult;</span><br><span class="line"><span class="keyword">import</span> com.cafuc.pojo.Result;</span><br><span class="line"><span class="keyword">import</span> com.cafuc.service.IDiscussManageService;</span><br><span class="line"><span class="keyword">import</span> com.cafuc.service.IPortalManageService;</span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;discussManage&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DiscussManageController</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Resource</span></span><br><span class="line">	<span class="keyword">private</span> IDiscussManageService discussManageService;</span><br><span class="line">	<span class="meta">@RequestMapping(&quot;addDiscuss&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Result <span class="title">addDiscuss</span><span class="params">(<span class="meta">@RequestBody</span> Discuss discuss)</span></span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			System.out.println(discuss);</span><br><span class="line">			discussManageService.addDiscuss(discuss);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">true</span>, <span class="string">&quot;评论成功&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">false</span>, <span class="string">&quot;评论失败&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@RequestMapping(&quot;init&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> List&lt;Discuss&gt; <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> discussManageService.init();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="5-16-订单填写"><a href="#5-16-订单填写" class="headerlink" title="5.16 订单填写"></a>5.16 订单填写</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;订单填写是机票预定中不可缺少的步骤之一，用户找到自己所需班次后点击订票按钮进入订单信息填写页面，用户所填写的信息包括乘机人信息和联系人信息量大模块，如下图所示。填写完信息后点击提交订单按钮，等待验证数据的有效性，确定填写无误后完成提交，填写订单的前提是用户已经登录系统。<br><img src="https://img-blog.csdnimg.cn/20200630122238229.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630122238229.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<h4 id="5-17-订单详情"><a href="#5-17-订单详情" class="headerlink" title="5.17 订单详情"></a>5.17 订单详情</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;填写订单信息完成订单提交后弹出订单详情页面提示用户检查航班信息和填写的用户信息，如下图所示。确保信息无误后点击确认付款按钮跳转到订单支付页面。<br><img src="https://img-blog.csdnimg.cn/20200630122336837.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630122336837.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><strong>订单确认功能主要代码如下：</strong></p>
+<h4 id="5-16-订单填写"><a href="#5-16-订单填写" class="headerlink" title="5.16 订单填写"></a>5.16 订单填写</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;订单填写是机票预定中不可缺少的步骤之一，用户找到自己所需班次后点击订票按钮进入订单信息填写页面，用户所填写的信息包括乘机人信息和联系人信息量大模块，如下图所示。填写完信息后点击提交订单按钮，等待验证数据的有效性，确定填写无误后完成提交，填写订单的前提是用户已经登录系统。<br><img src="https://img-blog.csdnimg.cn/20200630122238229.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630122238229.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h4 id="5-17-订单详情"><a href="#5-17-订单详情" class="headerlink" title="5.17 订单详情"></a>5.17 订单详情</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;填写订单信息完成订单提交后弹出订单详情页面提示用户检查航班信息和填写的用户信息，如下图所示。确保信息无误后点击确认付款按钮跳转到订单支付页面。<br><img src="https://img-blog.csdnimg.cn/20200630122336837.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630122336837.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><strong>订单确认功能主要代码如下：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/ack&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ack</span><span class="params">(Order order,HttpServletRequest request,HttpServletResponse response)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">if</span>(order.getOrderDate() ==<span class="keyword">null</span>) &#123;</span><br><span class="line">				order.setOrderDate(<span class="keyword">new</span> Date());</span><br><span class="line">			&#125;</span><br><span class="line">			HttpSession httpSession=request.getSession();</span><br><span class="line">			httpSession.setAttribute(<span class="string">&quot;order&quot;</span>, order);</span><br><span class="line">			System.out.println(request.getSession().getAttribute(<span class="string">&quot;order&quot;</span>));</span><br><span class="line">			response.sendRedirect(request.getContextPath()+<span class="string">&quot;/pay/index.jsp&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h4 id="5-18-订单支付"><a href="#5-18-订单支付" class="headerlink" title="5.18 订单支付"></a>5.18 订单支付</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;机票预订系统的订单支付功能使用的是支付宝沙箱环境支付，蚂蚁沙箱环境 (Beta) 是协助开发者进行接口功能开发及主要功能联调的辅助环境。登录支付宝沙箱平台依次完成生成买家和卖家账号信息、生成RSA秘钥、设置公钥信息、设置应用网关等应用环境配置。完成配置后下载官方测试代码，本系统选择的是电脑应用java版本，然后将下载的项目导入到eclipse工作空间。最后设置核心配置文件信息，打开flyTicket-portal-web项目下com.alipay.config包中的AlipayConfig.java文件配置如下信息：<br>//沙箱APPID<br>public static final  String app_id = “<strong>这里需要自己申请</strong>“;<br>//沙箱私钥<br>public static final  String merchant_private_key = “<strong>这里需要自己申请</strong>“;<br>//支付宝公钥<br>public static final  String alipay_public_key = “<strong>这里需要自己申请</strong>“;<br>//沙箱网关地址<br>public static final  String gatewayUrl = “<a target="_blank" rel="noopener" href="https://openapi.alipaydev.com/gateway.do&quot;">https://openapi.alipaydev.com/gateway.do&quot;</a>;</p>
 <p>//服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问<br>    public static String notify_url = “<a target="_blank" rel="noopener" href="http://localhost:8081/flyTicket-portal-web/pay/notify_url.jsp&quot;">http://localhost:8081/flyTicket-portal-web/pay/notify_url.jsp&quot;</a>;</p>
-<p>//页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问<br>    public static String return_url = “<a target="_blank" rel="noopener" href="http://localhost:8081/flyTicket-portal-web/orderManage/complete&quot;">http://localhost:8081/flyTicket-portal-web/orderManage/complete&quot;</a>;<br>完成以上配置后就可以实现订单支付功能了。点击确认付款后跳转到如下图所示界面。<br><img src="https://img-blog.csdnimg.cn/20200630122830766.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630122830766.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br>&nbsp;&nbsp;&nbsp;&nbsp;点击付款按钮后如下图所示，可以登录账户付款，也可以使用手机端沙箱支付宝完成付款。<br><img src="https://img-blog.csdnimg.cn/20200630122908819.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630122908819.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br>&nbsp;&nbsp;&nbsp;&nbsp;完成付款后如下图所示<br><img src="https://img-blog.csdnimg.cn/20200630122941862.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630122941862.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><strong>主要代码如下：</strong></p>
+<p>//页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问<br>    public static String return_url = “<a target="_blank" rel="noopener" href="http://localhost:8081/flyTicket-portal-web/orderManage/complete&quot;">http://localhost:8081/flyTicket-portal-web/orderManage/complete&quot;</a>;<br>完成以上配置后就可以实现订单支付功能了。点击确认付款后跳转到如下图所示界面。<br><img src="https://img-blog.csdnimg.cn/20200630122830766.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630122830766.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br>&nbsp;&nbsp;&nbsp;&nbsp;点击付款按钮后如下图所示，可以登录账户付款，也可以使用手机端沙箱支付宝完成付款。<br><img src="https://img-blog.csdnimg.cn/20200630122908819.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630122908819.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br>&nbsp;&nbsp;&nbsp;&nbsp;完成付款后如下图所示<br><img src="https://img-blog.csdnimg.cn/20200630122941862.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630122941862.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><strong>主要代码如下：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//支付完成后</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;complete&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">complete</span><span class="params">(HttpServletRequest request,HttpServletResponse response)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">	System.out.println(request.getSession().getAttribute(<span class="string">&quot;order&quot;</span>));</span><br><span class="line">	Order order=(Order)request.getSession().getAttribute(<span class="string">&quot;order&quot;</span>);</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="comment">//将数据插入到订单表中</span></span><br><span class="line">		orderManageService.insertOrder(order);</span><br><span class="line">		<span class="comment">//更改库存</span></span><br><span class="line">		Flight flight=orderManageService.findOneByFlightNumber(order.getFlightNumber());</span><br><span class="line">		<span class="keyword">if</span>(order.getGrade().equals(<span class="string">&quot;f&quot;</span>)) &#123;</span><br><span class="line">			flight.setFlightHighNumber(flight.getFlightHighNumber()-<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(order.getGrade().equals(<span class="string">&quot;b&quot;</span>)) &#123;</span><br><span class="line">			flight.setFlightMiddleNumber(flight.getFlightMiddleNumber()-<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			flight.setFlightBaseNumber(flight.getFlightBaseNumber()-<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		orderManageService.updatesNum(flight);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		response.sendRedirect(request.getContextPath()+<span class="string">&quot;/default/index.html&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>获取源码请关注公众号：C you again，回复“基于web的机票管理系统”或者“机票管理系统”</strong><br><img src="https://img-blog.csdnimg.cn/20200629140932725.jpg" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200629140932725.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<p><strong>获取源码请关注公众号：C you again，回复“基于web的机票管理系统”或者“机票管理系统”</strong><br><img src="https://img-blog.csdnimg.cn/20200629140932725.jpg" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200629140932725.jpg" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 
   
   
@@ -553,7 +492,7 @@
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="\posts\51772.html" title="基于web的机票管理系统设计与实现（一）" rel="bookmark "><img src="https://img-blog.csdnimg.cn/2020062913054442.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020062913054442.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于web的机票管理系统设计与实现（一）</span><span class="excerpt">基于web的机票管理系统</span></a><a class="item" href="\posts\65258.html" title="基于SSH框架的人力资源管理系统设计与实现" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于SSH框架的人力资源管理系统设计与实现</span><span class="excerpt">Spring+SpringMVC+Hibernate实现人力资源管理系统</span></a><a class="item" href="\posts\21025.html" title="基于java的企业进销存管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200826130307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200826130307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于java的企业进销存管理系统</span><span class="excerpt">基于java的企业进销存管理系统</span></a><a class="item" href="\posts\31183.html" title="基于SSM框架的JavaWeb通用权限管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200825222028100.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200825222028100.png#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于SSM框架的JavaWeb通用权限管理系统</span><span class="excerpt">Jsp 、SSM（Spring + Spring-MVC + Mybatis）、Shiro 、Mvc、Jdbc、MySQL...</span></a><a class="item" href="\posts\5070.html" title="基于ssm的客户管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/2020082515561175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020082515561175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于ssm的客户管理系统</span><span class="excerpt">ssm + jdk1.8 + mysql5.4实现客户管理系统</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="\posts\51772.html" title="基于web的机票管理系统设计与实现（一）" rel="bookmark "><img src="https://img-blog.csdnimg.cn/2020062913054442.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020062913054442.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" /><span class="title">基于web的机票管理系统设计与实现（一）</span><span class="excerpt">基于web的机票管理系统</span></a><a class="item" href="\posts\65258.html" title="基于SSH框架的人力资源管理系统设计与实现" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" /><span class="title">基于SSH框架的人力资源管理系统设计与实现</span><span class="excerpt">Spring+SpringMVC+Hibernate实现人力资源管理系统</span></a><a class="item" href="\posts\31183.html" title="基于SSM框架的JavaWeb通用权限管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200825222028100.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200825222028100.png#pic_center" srcset="data:image/png;base64,666" /><span class="title">基于SSM框架的JavaWeb通用权限管理系统</span><span class="excerpt">Jsp 、SSM（Spring + Spring-MVC + Mybatis）、Shiro 、Mvc、Jdbc、MySQL...</span></a><a class="item" href="\posts\21025.html" title="基于java的企业进销存管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200826130307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200826130307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" /><span class="title">基于java的企业进销存管理系统</span><span class="excerpt">基于java的企业进销存管理系统</span></a><a class="item" href="\posts\5070.html" title="基于ssm的客户管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/2020082515561175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020082515561175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" /><span class="title">基于ssm的客户管理系统</span><span class="excerpt">ssm + jdk1.8 + mysql5.4实现客户管理系统</span></a></div></section></div>
       
       
         <div class='copyright'>
@@ -606,7 +545,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -618,7 +557,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -630,7 +569,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -780,6 +719,11 @@
             ><div class='name'>IT技术圈</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E6%B5%99%E5%A4%A7%E7%89%88%E3%80%8AC%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E3%80%8B%E9%A2%98%E7%9B%AE%E9%9B%86/" href="/categories/%E6%B5%99%E5%A4%A7%E7%89%88%E3%80%8AC%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E3%80%8B%E9%A2%98%E7%9B%AE%E9%9B%86/"
+            id="categoriesE6B599E5A4A7E78988E3808ACE8AFADE8A880E7A88BE5BA8FE8AEBEE8AEA1EFBC88E7ACAC3E78988EFBC89E3808BE9A298E79BAEE99B86"
+            ><div class='name'>浙大版《C语言程序设计（第3版）》题目集</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/" href="/categories/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/"
             id="categoriesE7B3BBE7BB9FE6BA90E7A081"
             ><div class='name'>系统源码</div><div class='badge'>(12)</div></a></li>
@@ -806,7 +750,7 @@
 
 
     <div class='content'>
-      <a href="/tags/ERP%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">ERP管理系统</a> <a href="/tags/HTML5%E5%B0%8F%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">HTML5小游戏</a> <a href="/tags/SEO%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">SEO网站优化</a> <a href="/tags/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">人力资源管理系统</a> <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 16.5px; color: #888">后端开发</a> <a href="/tags/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 19px; color: #777">图书管理系统</a> <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">客户管理系统</a> <a href="/tags/%E5%AE%BF%E8%88%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">宿舍管理系统</a> <a href="/tags/%E5%AF%9D%E5%AE%A4%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">寝室管理系统</a> <a href="/tags/%E6%9C%BA%E7%A5%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 16.5px; color: #888">机票管理系统</a> <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">权限管理系统</a> <a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E4%BA%AB/" style="font-size: 24px; color: #555">源码分享</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/" style="font-size: 21.5px; color: #666">系统源码</a> <a href="/tags/%E8%B4%AA%E5%90%83%E8%9B%87/" style="font-size: 14px; color: #999">贪吃蛇</a> <a href="/tags/%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">销存管理系统</a>
+      <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 14px; color: #999">C语言</a> <a href="/tags/ERP%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">ERP管理系统</a> <a href="/tags/HTML5%E5%B0%8F%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">HTML5小游戏</a> <a href="/tags/SEO%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">SEO网站优化</a> <a href="/tags/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">人力资源管理系统</a> <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 16.5px; color: #888">后端开发</a> <a href="/tags/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 19px; color: #777">图书管理系统</a> <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">客户管理系统</a> <a href="/tags/%E5%AE%BF%E8%88%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">宿舍管理系统</a> <a href="/tags/%E5%AF%9D%E5%AE%A4%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">寝室管理系统</a> <a href="/tags/%E6%9C%BA%E7%A5%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 16.5px; color: #888">机票管理系统</a> <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">权限管理系统</a> <a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E4%BA%AB/" style="font-size: 24px; color: #555">源码分享</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" style="font-size: 14px; color: #999">程序设计</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/" style="font-size: 21.5px; color: #666">系统源码</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">编程</a> <a href="/tags/%E8%B4%AA%E5%90%83%E8%9B%87/" style="font-size: 14px; color: #999">贪吃蛇</a> <a href="/tags/%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">销存管理系统</a>
     </div>
   </section>
 
@@ -817,6 +761,24 @@
 </aside>
 
 
+
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="基于web的机票管理系统设计与实现（二）";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.add("show");
+  
+</script>
 
         
       </div>
@@ -840,30 +802,93 @@
       
     
   </footer>
-  
-  
-   <!--百度统计的代码-->
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?a93f6200bb892cd5ad339be4cb62db0f";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
 
 
-  
-  
-  
-
-
-      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
     </div>
   </div>
   <div>
-    <!-- required -->
+    <script>
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  
+  
+</script>
+<!-- required -->
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
 
@@ -928,7 +953,6 @@ var _hmt = _hmt || [];
 <script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
 
     <script type="text/javascript">
-      $(function(){
         var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
@@ -943,22 +967,17 @@ var _hmt = _hmt || [];
           }
           shuffle(imgs);
         }
-        if ('.cover-backstretch') {
-          $('.cover-backstretch').backstretch(
+	  function Pjax_backstretch(){
+        
+          $('#cover-backstretch').backstretch(
             imgs,
           {
             duration: "10000",
             fade: "1500"
           });
-        } else {
-          $.backstretch(
-            imgs,
-          {
-            duration: "10000",
-            fade: "1500"
-          });
-        }
-      });
+        
+	  }
+	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
     </script>
   
 
@@ -1130,9 +1149,9 @@ var _hmt = _hmt || [];
   function pjax_valine() {
     if(!document.querySelectorAll("#valine_container")[0])return;
 
-    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "快来评论吧~";
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
 
-    let path = $.trim($('#pjax-comment-path').text());
+    let path = pdata.commentPath;
     if (path.length == 0) {
       let defaultPath = '';
       path = defaultPath || decodeURI(window.location.pathname);
@@ -1153,7 +1172,7 @@ var _hmt = _hmt || [];
       highlight: 'true',
       mathJax: 'false',
       enableQQ: 'true',
-      recordIP: false,
+      recordIP: 'false',
       requiredFields: requiredFields,
       emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
       emojiMaps: emojiMaps
@@ -1168,91 +1187,6 @@ var _hmt = _hmt || [];
 
 
 
-  
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js" aysc></script>
-
-<script type="text/javascript">
-function getClientHeight(){
-  var clientHeight=0;
-  if(document.body.clientHeight&&document.documentElement.clientHeight){
-  var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
-  }else{
-  var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
-  }
-  return clientHeight;
-}
-function supportCss3(style) {
-  var prefix = ['webkit', 'Moz', 'ms', 'o'],
-  i,
-  humpString = [],
-  htmlStyle = document.documentElement.style,
-  _toHumb = function (string) {
-  return string.replace(/-(\w)/g, function ($0, $1) {
-  return $1.toUpperCase();
-  });
-  };
-  for (i in prefix)
-  humpString.push(_toHumb(prefix[i] + '-' + style));
-  humpString.push(_toHumb(style));
-  for (i in humpString)
-  if (humpString[i] in htmlStyle) return true;
-  return false;
-};
-//配置信息
-var options = {
-  bottom: '32px',
-  right: 'unset',
-  left: '16px',
-  time: '0s',
-  mixColor: '#f4f4f4',
-  backgroundColor: '#f4f4f4',
-  buttonColorDark: '#333',
-  buttonColorLight: '#ddd',
-  saveInCookies: true,
-  label: '',
-  autoMatchOsTheme: true
-};
-// 卡片兼容处理 mix-blend-mode 与 effect: [blur] 冲突
-
-function pjax_darkmodejs(){
-  
-  if(!supportCss3('mix-blend-mode'))return;
-  var checkExist2 = setInterval(function() {
-     if (typeof jQuery == 'undefined'){return;}
-     clearInterval(checkExist2);
-     var TopFlag=getClientHeight();
-    $(window).scroll(function(){
-      var top = $(document).scrollTop();
-      if(top > TopFlag) {
-        $(".darkmode-layer").css("mix-blend-mode","normal");
-        $(".darkmode-layer").css("background-color","#222");
-      }else{
-        $(".darkmode-layer").css("mix-blend-mode","difference");
-        $(".darkmode-layer").css("background-color","");
-      }
-    })
-  }, 100);
-  
-}
-// mix-blend-mode support?
-if(supportCss3('mix-blend-mode')){
-  window.darkmode = new Darkmode(options);
-  
-  window.darkmode.showWidget();
-  
-  pjax_darkmodejs();
-}
-////////////////Development///////////////////////
-//////////////darkmode模式切换////////////////////
-//window.darkmode.toggle();                     //
-//////////////darkmode模式判断////////////////////
-//console.log(window.darkmode.isActivated())    //
-//////////////////////////////////////////////////
-</script>
-
-
-
-
   <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
@@ -1261,27 +1195,31 @@ if(supportCss3('mix-blend-mode')){
 
 
 
-
-  
-    
-<script src="/js/search.js"></script>
-
-  
-
-
 <!-- optional -->
 
   <script>
 const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
 const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
-(function ($) {
+
+$('.input.u-search-input').one('focus',function(){
+	
+		loadScript('/js/search/hexo.js',setSearchService);
+	
+})
+
+function listenSearch(){
   
     customSearch = new HexoSearch({
       imagePath: SearchServiceimagePath
     });
   
-})(jQuery);
-
+}
+function setSearchService() {
+	listenSearch();
+	
+		document.addEventListener("pjax:success", listenSearch);
+	
+}
 </script>
 
 
@@ -1504,7 +1442,193 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 
 
 
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "user-color-scheme";
+const rootElementDarkModeAttributeName = "data-user-color-scheme";
+
+const setLS = (k, v) => {
+  try {
+    localStorage.setItem(k, v);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const removeLS = (k) => {
+  try {
+    localStorage.removeItem(k);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const getLS = (k) => {
+  try {
+    return localStorage.getItem(k);
+  } catch (e) {
+    console.log(e.message);
+    return null;
+  }
+};
+
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+
+/**
+ * get target mode
+ */
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+
+/**
+ * bind click event for toggle button
+ */
+function bindToggleButton() {
+	var btn=$("#wrapper .toggle-mode-btn");
+    btn.on('click',(e) => {
+      const mode = toggleCustomDarkMode();
+      applyCustomDarkModeSettings(mode);
+    });
+}
+
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", bindToggleButton);
+document.addEventListener("pjax:success", bindToggleButton);
+
+</script>
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
 <!-- more -->
+
+
 
 
     
@@ -1512,6 +1636,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 
 
 <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
 
 <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
 
@@ -1530,6 +1655,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
   
 </div>
 
+
 <script>
     var pjax;
     document.addEventListener('DOMContentLoaded', function () {
@@ -1537,6 +1663,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
         elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
         selectors: [
           "title",
+          "#l_cover",
           "#pjax-container",
           "#pjax-header-nav-list"
         ],
@@ -1546,7 +1673,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
     });
 
     document.addEventListener('pjax:send', function (e) {
-      window.stop(); // 相当于点击了浏览器的停止按钮
+      //window.stop(); // 相当于点击了浏览器的停止按钮
 
       try {
         var currentUrl = window.location.pathname;
@@ -1565,31 +1692,34 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
       if (typeof $.fancybox != "undefined") {
         $.fancybox.close();    // 关闭弹窗
       }
-      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
-      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
-      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
 
       // 解绑事件 避免重复监听
-      $('.s-top').unbind('click');
+      volantis.$topBtn.unbind('click');
       $('.menu a').unbind('click');
       $(window).unbind('resize');
       $(window).unbind('scroll');
       $(document).unbind('scroll');
       $(document).unbind('click');
       $('body').unbind('click');
+	  
       window.ShowLoading();
+	  
     });
 
     document.addEventListener('pjax:complete', function () {
       // 关于百度统计对 SPA 页面的处理：
       // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
       // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
-      // 
+       
 
       // 关于谷歌统计对 SPA 页面的处理：
       // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
       // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
       
+	 
 
       $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
       $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
@@ -1603,22 +1733,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
             pjax_fancybox();
           }
         
-          
-          if ('.cover-backstretch') {
-            $('.cover-backstretch').backstretch("resize");
-            if($('.cover-wrapper').is(':hidden')){
-              $('.cover-backstretch').backstretch("pause");
-            }else{
-              $('.cover-backstretch').backstretch("next");
-            }
-          } else {
-            $.backstretch("resize");
-            if($('.cover-wrapper').is(':hidden')){
-              $.backstretch("pause");
-            }else{
-              $.backstretch("next");
-            }
-          }
+		  Pjax_backstretch()
         
         
         
@@ -1635,16 +1750,18 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
         
         
         
-          pjax_darkmodejs();
-        
       } catch (e) {
         console.log(e);
       }
+	  
       window.HideLoading();
+	  
     });
 
     document.addEventListener('pjax:error', function (e) {
+	  
       window.HideLoading();
+	  
       window.location.href = e.triggerElement.href;
     });
 </script>

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0'>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
     
   
   <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta http-equiv='x-dns-prefetch-control' content='on' />
 
   <!-- 页面元数据 -->
   
@@ -35,59 +37,38 @@
   
 
   <!-- link -->
-  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
-
-  
-  
-
-  
-
-  
-
-  
-
   
 
   <!-- import link -->
   
 
   
-  
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/first.css">
 
   
+
   
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
   
-  <!-- 脚本懒加载函数 -->
-  <script>
-  function loadScript(src, cb) {
-    var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
-    var script = document.createElement('script');
-    script.setAttribute('type','text/javascript');
-    if (cb) script.onload = cb;
-    script.setAttribute('src', src);
-    HEAD.appendChild(script);
-  }
-  //https://github.com/filamentgroup/loadCSS
-  !function(c){"use strict";var e=function(e,t,n,r){var o,i=c.document,a=i.createElement("link");if(t)o=t;else{var d=(i.body||i.getElementsByTagName("head")[0]).childNodes;o=d[d.length-1]}var f=i.styleSheets;if(r)for(var l in r)r.hasOwnProperty(l)&&a.setAttribute(l,r[l]);a.rel="stylesheet",a.href=e,a.media="only x",function e(t){if(i.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(a,t?o:o.nextSibling)});var s=function(e){for(var t=a.href,n=f.length;n--;)if(f[n].href===t)return e();setTimeout(function(){s(e)})};function u(){a.addEventListener&&a.removeEventListener("load",u),a.media=n||"all"}return a.addEventListener&&a.addEventListener("load",u),(a.onloadcssdefined=s)(u),a};"undefined"!=typeof exports?exports.loadCSS=e:c.loadCSS=e}("undefined"!=typeof global?global:this);
-  </script>
+
   <script id="loadcss"></script>
+
 </head>
 
 <body>
-  <header class="l_header auto shadow blur " style='opacity: 0' >
+  
+
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
-  <div class='wrapper'>
+  <div id='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
-        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
@@ -294,14 +275,13 @@
   </div>
 </header>
 
-  <div class="l_body">
-    <div class="l_cover">
+  <div id="l_body">
+    <div id="l_cover">
   
     
-    
-        <div class='cover-wrapper post search' style="display: none;">
+        <div id="full" class='cover-wrapper post search' style="display: none;">
           
-            <div class='cover-backstretch'></div>
+            <div id='cover-backstretch'></div>
           
           <div class='cover-body'>
   <div class='top'>
@@ -358,49 +338,14 @@
   </div>
 </div>
 
-          <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
         </div>
     
   
   </div>
-  
-    <div class='safearea'>
-      <div class='body-wrapper' id="pjax-container">
-        
-          <!--此文件用来存放一些不方便取值的变量--> 
-<!--思路大概是将值藏到重加载的区域内--> 
- 
- 
- 
-<div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">true</div> 
-  <div id="pjax-pageTitle">基于SSM的宿舍管理系统（附 演示、源码下载地址）</div> 
-  <div id="pjax-enable-cover">true</div> 
-  <div id="pjax-comment-path"></div> 
-  <div id="pjax-comment-placeholder"></div> 
-</div> 
- 
- 
-<script> 
-  // 处理封面 此时 jquery 还没加载 
-  if ("none" == "none") { // 移除封面 
-    document.getElementsByClassName('cover-wrapper')[0].style.display = "none"; 
-    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
-  } else { 
-    if ("none" == "half") { // 半屏 
-      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half'); 
-      document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("none" == "full") { // 全屏 
-      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full'); 
-      document.getElementsByClassName('scroll-down')[0].style.display = ""; 
-    } 
-    document.getElementsByClassName('cover-wrapper')[0].style.display = ""; 
-    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show"); 
-  } 
-</script> 
- 
 
-        
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
         
 
 <div class='l_main'>
@@ -525,7 +470,7 @@
 <li>发布考勤、打卡任务</li>
 <li>查看、修改个人信息</li>
 </ol>
-<p><img src="https://img-blog.csdnimg.cn/20200926123800845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926123800845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><strong>宿舍管理员：</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20200926123800845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926123800845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><strong>宿舍管理员：</strong></p>
 <ol>
 <li>查看公告</li>
 <li>查看、删除自己管理的学生</li>
@@ -533,7 +478,7 @@
 <li>查看学生打卡记录</li>
 <li>查看、修改个人信息</li>
 </ol>
-<p><img src="https://img-blog.csdnimg.cn/20200926124203648.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926124203648.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><strong>学生：</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20200926124203648.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926124203648.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><strong>学生：</strong></p>
 <ol>
 <li><p>查看公告</p>
 </li>
@@ -542,7 +487,7 @@
 <li><p>完成打卡任务，查看打卡记录</p>
 </li>
 <li><p>查看、修改个人信息</p>
-<p><img src="https://img-blog.csdnimg.cn/20200926124529377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926124529377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200926124529377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926124529377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 </li>
 </ol>
 <h2 id="5、数据库设计"><a href="#5、数据库设计" class="headerlink" title="5、数据库设计"></a>5、数据库设计</h2><p>分析系统需求，数据库应有以下几张表：</p>
@@ -948,30 +893,29 @@
 </tbody></table>
 <h2 id="6、运行环境搭建"><a href="#6、运行环境搭建" class="headerlink" title="6、运行环境搭建"></a>6、运行环境搭建</h2><p>前面已经提到，本系统使用SSM框架，搭建过程较为繁琐，因此将此部分独立出来，作为一个专题，具体搭建过程请参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40625778/article/details/108738764">《手把手教你搭建SSM框架（Eclipse版）》</a> 这篇文章。搭建过程若出现其他问题，可以在<a target="_blank" rel="noopener" href="https://gzh.cyouagain.cn/">公众号【C you again】</a> 后台私信。</p>
 <h2 id="7、项目工程结构"><a href="#7、项目工程结构" class="headerlink" title="7、项目工程结构"></a>7、项目工程结构</h2><p>根据第六步搭建完系统运行环境后，工程结构目录如下图所示</p>
-<p><img src="https://img-blog.csdnimg.cn/20200926161618970.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926161618970.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br><strong>对工程结构各个目录的解释：</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20200926161618970.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926161618970.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><strong>对工程结构各个目录的解释：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">com.cya.controller</span><br></pre></td></tr></table></figure>
-<p>controller包用于存放接收请求的类，充当前后端数据交互的“桥梁”<br><img src="https://img-blog.csdnimg.cn/2020092616250568.png#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020092616250568.png#pic_left" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<p>controller包用于存放接收请求的类，充当前后端数据交互的“桥梁”<br><img src="https://img-blog.csdnimg.cn/2020092616250568.png#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020092616250568.png#pic_left" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">com.cya.service</span><br></pre></td></tr></table></figure>
-<p>service包是所有业务逻辑的接口<br><img src="https://img-blog.csdnimg.cn/20200926162803593.png#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926162803593.png#pic_left" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<p>service包是所有业务逻辑的接口<br><img src="https://img-blog.csdnimg.cn/20200926162803593.png#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926162803593.png#pic_left" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">com.cya.service.impl</span><br></pre></td></tr></table></figure>
-<p>service.impl包用于存放service接口的所有实现类<br><img src="https://img-blog.csdnimg.cn/20200926162956990.png#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926162956990.png#pic_left" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<p>service.impl包用于存放service接口的所有实现类<br><img src="https://img-blog.csdnimg.cn/20200926162956990.png#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926162956990.png#pic_left" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">com.cya.mapper</span><br></pre></td></tr></table></figure>
-<p>mapper包用于存放对数据库操纵的接口和对应的xml实现<br><img src="https://img-blog.csdnimg.cn/20200926163235344.png#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926163235344.png#pic_left" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<p>mapper包用于存放对数据库操纵的接口和对应的xml实现<br><img src="https://img-blog.csdnimg.cn/20200926163235344.png#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926163235344.png#pic_left" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">com.cya.entity</span><br></pre></td></tr></table></figure>
-<p>entity包用于存放项目中用到的所有实体类，它与数据库中的表相对应<br><img src="https://img-blog.csdnimg.cn/20200926163450155.png#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926163450155.png#pic_left" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br>resources文件下存放SSM框架整合的必要配置文件，详情请看<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40625778/article/details/108738764">《手把手教你搭建SSM框架（Eclipse版）》</a><br><img src="https://img-blog.csdnimg.cn/2020092616374144.png#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020092616374144.png#pic_left" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br>dorm是存放所有model层文件的父级文件夹，其中admin，dormManager、student三个子文件夹存放系统管理员、宿舍管理员、学生三个角色对应的HTML文件。<br><img src="https://img-blog.csdnimg.cn/2020092616420276.png#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020092616420276.png#pic_left" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<p>entity包用于存放项目中用到的所有实体类，它与数据库中的表相对应<br><img src="https://img-blog.csdnimg.cn/20200926163450155.png#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926163450155.png#pic_left" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br>resources文件下存放SSM框架整合的必要配置文件，详情请看<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40625778/article/details/108738764">《手把手教你搭建SSM框架（Eclipse版）》</a><br><img src="https://img-blog.csdnimg.cn/2020092616374144.png#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020092616374144.png#pic_left" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br>dorm是存放所有model层文件的父级文件夹，其中admin，dormManager、student三个子文件夹存放系统管理员、宿舍管理员、学生三个角色对应的HTML文件。<br><img src="https://img-blog.csdnimg.cn/2020092616420276.png#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020092616420276.png#pic_left" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 <h2 id="8、功能实现及展示"><a href="#8、功能实现及展示" class="headerlink" title="8、功能实现及展示"></a>8、功能实现及展示</h2><p>由于系统包含功能众多，在此无法一一列举，所以挑选几个代表做展示，如需获取完整源码请在公众号【C you again】回复“宿舍管理系统”。</p>
-<h4 id="8-1-登录功能实现"><a href="#8-1-登录功能实现" class="headerlink" title="8.1 登录功能实现"></a>8.1 登录功能实现</h4><p>项目启动成功后，在浏览器地址栏输入：<a target="_blank" rel="noopener" href="http://localhost:8080/dormManage/">http://localhost:8080/dormManage/</a> 进入用户登录界面如下图所示：<br><img src="https://img-blog.csdnimg.cn/20200926165247339.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926165247339.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
-<p><img src="https://img-blog.csdnimg.cn/20200926165939202.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926165939202.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"></p>
+<h4 id="8-1-登录功能实现"><a href="#8-1-登录功能实现" class="headerlink" title="8.1 登录功能实现"></a>8.1 登录功能实现</h4><p>项目启动成功后，在浏览器地址栏输入：<a target="_blank" rel="noopener" href="http://localhost:8080/dormManage/">http://localhost:8080/dormManage/</a> 进入用户登录界面如下图所示：<br><img src="https://img-blog.csdnimg.cn/20200926165247339.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926165247339.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200926165939202.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926165939202.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
 <p>在此界面用户可以选择不同的角色登录，输入每个角色对应的登录信息后，首先会判断输入信息的有效性，做出相应的响应或提示。登录功能具体的实现代码如下，此处仅展示controller层代码，如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.cya.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.management.relation.Role;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpSession;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.tomcat.util.digester.ArrayStack;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestBody;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.cya.entity.Login;</span><br><span class="line"><span class="keyword">import</span> com.cya.entity.Result;</span><br><span class="line"><span class="keyword">import</span> com.cya.service.ILoginService;</span><br><span class="line"><span class="keyword">import</span> com.cya.service.impl.LoginServiceImpl;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginController</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="keyword">private</span> ILoginService loginServiceImpl;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@RequestMapping(&quot;login&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> List <span class="title">login</span><span class="params">(HttpServletRequest request, <span class="meta">@RequestBody</span> Login login)</span> </span>&#123;</span><br><span class="line">		List list=loginServiceImpl.login(login);</span><br><span class="line">		<span class="keyword">if</span>(list.size()==<span class="number">1</span>) &#123;</span><br><span class="line">			HttpSession session=request.getSession();</span><br><span class="line">			session.setAttribute(login.getRole(), list);</span><br><span class="line">			System.out.println(<span class="string">&quot;session=&quot;</span>+session.getAttribute(login.getRole()));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> list;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@RequestMapping(&quot;getSession&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> List <span class="title">getSession</span><span class="params">(HttpServletRequest request,<span class="meta">@RequestBody</span> Login login)</span></span>&#123;</span><br><span class="line">		System.out.println(login);</span><br><span class="line">		System.out.println(request.getSession().getAttribute(login.getRole()));</span><br><span class="line">		List list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">		list.add(request.getSession().getAttribute(login.getRole()));</span><br><span class="line">		<span class="keyword">return</span> list;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@RequestMapping(&quot;exitSys&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Result <span class="title">exitSys</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">		String exit=<span class="string">&quot;&quot;</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">if</span>(request.getParameter(<span class="string">&quot;exit&quot;</span>)!=<span class="keyword">null</span>) &#123;</span><br><span class="line">				exit=request.getParameter(<span class="string">&quot;exit&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			request.getSession().removeAttribute(exit);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">true</span>, <span class="string">&quot;注销成功&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">false</span>, <span class="string">&quot;注销失败&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h4 id="8-2-发布公告功能实现"><a href="#8-2-发布公告功能实现" class="headerlink" title="8.2 发布公告功能实现"></a>8.2 发布公告功能实现</h4><p>在系统管理员端，有发布公告的权限，系统管理员点击添加公告按钮，输入相关信息后进行有效性校验，校验成功及代表公告发布成功。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200926170458326.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926170458326.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br>成功发布公告后，会出现在宿舍管理员端和学生端界面，效果图如下：</p>
-<p><img src="https://img-blog.csdnimg.cn/2020092617100845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020092617100845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br>公告模块主要代码以mapper层实现为例：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200926170458326.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926170458326.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br>成功发布公告后，会出现在宿舍管理员端和学生端界面，效果图如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/2020092617100845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020092617100845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_left" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br>公告模块主要代码以mapper层实现为例：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- ******************** 公告 ******************* --&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getNoticeManage&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.cya.entity.Notice&quot;</span>&gt;</span></span><br><span class="line">   select * from t_notice</span><br><span class="line">   <span class="tag">&lt;<span class="name">where</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;filter==&#x27;date&#x27; and key !=&#x27;&#x27; &quot;</span>&gt;</span></span><br><span class="line">       date like concat(&quot;%&quot;,#&#123;key&#125;,&quot;%&quot;)</span><br><span class="line">     <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">where</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">  <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">&quot;addNoticeManage&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;com.cya.entity.Notice&quot;</span>&gt;</span></span><br><span class="line">   insert into t_notice(noticePerson,date,content) values(#&#123;noticePerson&#125;,current_date,#&#123;content&#125;)</span><br><span class="line"> <span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"> <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getNoticeMangerById&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;Integer&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.cya.entity.Notice&quot;</span>&gt;</span></span><br><span class="line">    select * from t_notice where noticeId=#&#123;noticeId&#125;</span><br><span class="line"> <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"> <span class="tag">&lt;<span class="name">update</span> <span class="attr">id</span>=<span class="string">&quot;updataNoticeManageById&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;com.cya.entity.Notice&quot;</span>&gt;</span></span><br><span class="line">   update t_notice set noticePerson=#&#123;noticePerson&#125;,content=#&#123;content&#125; where noticeId=#&#123;noticeId&#125;</span><br><span class="line"> <span class="tag">&lt;/<span class="name">update</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"> <span class="tag">&lt;<span class="name">delete</span> <span class="attr">id</span>=<span class="string">&quot;noticeManagerDeleteById&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;Integer&quot;</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    delete from t_notice where noticeId=#&#123;noticeId&#125;</span><br><span class="line"> <span class="tag">&lt;/<span class="name">delete</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- ******************** 公告 ******************* --&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="8-3-考勤记录功能实现"><a href="#8-3-考勤记录功能实现" class="headerlink" title="8.3 考勤记录功能实现"></a>8.3 考勤记录功能实现</h4><p>宿舍管理员根据自己所管理楼，对住在管理范围内的学生进行考勤，并添加考勤记录，学生端也会显示考勤信息。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200926171810741.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926171810741.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="在这里插入图片描述"><br>主要实现代码如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200926171810741.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200926171810741.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br>主要实现代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/getRecordMsg&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> PageResult <span class="title">getRecordMsg</span><span class="params">(HttpServletRequest request)</span></span>&#123;</span><br><span class="line">		Integer pageNum=<span class="number">1</span>;</span><br><span class="line">		Integer pageSize=<span class="number">20</span>;</span><br><span class="line">		Integer dormBuildId=<span class="number">0</span>;</span><br><span class="line">		String filter=request.getParameter(<span class="string">&quot;filter&quot;</span>);</span><br><span class="line">		String key=request.getParameter(<span class="string">&quot;key&quot;</span>);</span><br><span class="line">		<span class="keyword">if</span>(request.getParameter(<span class="string">&quot;pageNum&quot;</span>)!=<span class="keyword">null</span> &amp;&amp; request.getParameter(<span class="string">&quot;pageNum&quot;</span>)!=<span class="string">&quot;&quot;</span>) &#123;</span><br><span class="line">			pageNum=Integer.parseInt(request.getParameter(<span class="string">&quot;pageNum&quot;</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(request.getParameter(<span class="string">&quot;pageSize&quot;</span>)!=<span class="keyword">null</span> &amp;&amp; request.getParameter(<span class="string">&quot;pageSize&quot;</span>)!=<span class="string">&quot;&quot;</span>) &#123;</span><br><span class="line">			pageSize=Integer.parseInt(request.getParameter(<span class="string">&quot;pageSize&quot;</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(request.getParameter(<span class="string">&quot;dormBuildId&quot;</span>)!=<span class="keyword">null</span> &amp;&amp; request.getParameter(<span class="string">&quot;dormBuildId&quot;</span>)!=<span class="string">&quot;&quot;</span>) &#123;</span><br><span class="line">			dormBuildId=Integer.parseInt(request.getParameter(<span class="string">&quot;dormBuildId&quot;</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">&quot;pageNum=&quot;</span>+pageNum);</span><br><span class="line">		System.out.println(<span class="string">&quot;pageSize=&quot;</span>+pageSize);</span><br><span class="line">		<span class="keyword">return</span> dormManageServiceImpl.getRecordMsg(pageNum, pageSize, filter, key, dormBuildId);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@RequestMapping(&quot;getRecordById&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Record <span class="title">getRecordById</span><span class="params">(Integer recordId)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> dormManageServiceImpl.getRecordById(recordId);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@RequestMapping(&quot;updataRecordMsg&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Result <span class="title">updataRecordMsg</span><span class="params">(<span class="meta">@RequestBody</span> Record record)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			dormManageServiceImpl.updataRecordMsg(record);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">true</span>, <span class="string">&quot;更新成功&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">false</span>, <span class="string">&quot;更新失败&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@RequestMapping(&quot;addRecordMsg&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Result <span class="title">addRecordMsg</span><span class="params">(<span class="meta">@RequestBody</span> Record record)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			System.out.println(record);</span><br><span class="line">			dormManageServiceImpl.addRecordMsg(record);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">true</span>, <span class="string">&quot;添加成功&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">false</span>, <span class="string">&quot;添加失败&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@RequestMapping(&quot;recordManagerDeleteById1&quot;)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Result <span class="title">recordManagerDeleteById</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">		Integer recordId=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span>(request.getParameter(<span class="string">&quot;recordId&quot;</span>)!=<span class="keyword">null</span> &amp;&amp; request.getParameter(<span class="string">&quot;recordId&quot;</span>)!=<span class="string">&quot;&quot;</span>) &#123;</span><br><span class="line">			recordId=Integer.parseInt(request.getParameter(<span class="string">&quot;recordId&quot;</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			dormManageServiceImpl.recordManagerDeleteById1(recordId);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">true</span>, <span class="string">&quot;删除成功&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> Result(<span class="keyword">false</span>, <span class="string">&quot;删除失败&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="9、源码下载"><a href="#9、源码下载" class="headerlink" title="9、源码下载"></a>9、源码下载</h2><p>若需获取本系统源码请在公众号【C you again】回复“宿舍管理系统”</p>
 <p>你也可以点击此链接<a target="_blank" rel="noopener" href="https://gzh.cyouagain.cn/">快速回复</a></p>
 <h2 id="10、相关说明"><a href="#10、相关说明" class="headerlink" title="10、相关说明"></a>10、相关说明</h2><ol>
@@ -992,7 +936,7 @@
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="\posts\65258.html" title="基于SSH框架的人力资源管理系统设计与实现" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于SSH框架的人力资源管理系统设计与实现</span><span class="excerpt">Spring+SpringMVC+Hibernate实现人力资源管理系统</span></a><a class="item" href="\posts\21025.html" title="基于java的企业进销存管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200826130307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200826130307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于java的企业进销存管理系统</span><span class="excerpt">基于java的企业进销存管理系统</span></a><a class="item" href="\posts\31183.html" title="基于SSM框架的JavaWeb通用权限管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200825222028100.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200825222028100.png#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于SSM框架的JavaWeb通用权限管理系统</span><span class="excerpt">Jsp 、SSM（Spring + Spring-MVC + Mybatis）、Shiro 、Mvc、Jdbc、MySQL...</span></a><a class="item" href="\posts\5070.html" title="基于ssm的客户管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/2020082515561175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020082515561175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于ssm的客户管理系统</span><span class="excerpt">ssm + jdk1.8 + mysql5.4实现客户管理系统</span></a><a class="item" href="\posts\5780.html" title="JavaWeb 图书管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200824155218898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824155218898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">JavaWeb 图书管理系统</span><span class="excerpt">springboot + jpa + mybatis + springsecurity +javaex实现图书管理系统</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="\posts\65258.html" title="基于SSH框架的人力资源管理系统设计与实现" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200827190417116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" /><span class="title">基于SSH框架的人力资源管理系统设计与实现</span><span class="excerpt">Spring+SpringMVC+Hibernate实现人力资源管理系统</span></a><a class="item" href="\posts\31183.html" title="基于SSM框架的JavaWeb通用权限管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200825222028100.png#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200825222028100.png#pic_center" srcset="data:image/png;base64,666" /><span class="title">基于SSM框架的JavaWeb通用权限管理系统</span><span class="excerpt">Jsp 、SSM（Spring + Spring-MVC + Mybatis）、Shiro 、Mvc、Jdbc、MySQL...</span></a><a class="item" href="\posts\21025.html" title="基于java的企业进销存管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200826130307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200826130307761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" /><span class="title">基于java的企业进销存管理系统</span><span class="excerpt">基于java的企业进销存管理系统</span></a><a class="item" href="\posts\5070.html" title="基于ssm的客户管理系统" rel="bookmark "><img src="https://img-blog.csdnimg.cn/2020082515561175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020082515561175.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" /><span class="title">基于ssm的客户管理系统</span><span class="excerpt">ssm + jdk1.8 + mysql5.4实现客户管理系统</span></a><a class="item" href="\posts\46042.html" title="Java GUI_图书管理系统设计与实现" rel="bookmark "><img src="https://img-blog.csdnimg.cn/20200824205253483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200824205253483.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNjI1Nzc4,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" /><span class="title">Java GUI_图书管理系统设计与实现</span><span class="excerpt">java awt +MySql+eclipse/idea 实现图书管理系统</span></a></div></section></div>
       
       
         <div class='copyright'>
@@ -1045,7 +989,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -1057,7 +1001,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -1069,7 +1013,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
           
         </a>
       
@@ -1221,6 +1165,11 @@ ssm + jdk1.8 ...</p>
             ><div class='name'>IT技术圈</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/%E6%B5%99%E5%A4%A7%E7%89%88%E3%80%8AC%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E3%80%8B%E9%A2%98%E7%9B%AE%E9%9B%86/" href="/categories/%E6%B5%99%E5%A4%A7%E7%89%88%E3%80%8AC%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E3%80%8B%E9%A2%98%E7%9B%AE%E9%9B%86/"
+            id="categoriesE6B599E5A4A7E78988E3808ACE8AFADE8A880E7A88BE5BA8FE8AEBEE8AEA1EFBC88E7ACAC3E78988EFBC89E3808BE9A298E79BAEE99B86"
+            ><div class='name'>浙大版《C语言程序设计（第3版）》题目集</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/" href="/categories/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/"
             id="categoriesE7B3BBE7BB9FE6BA90E7A081"
             ><div class='name'>系统源码</div><div class='badge'>(12)</div></a></li>
@@ -1247,7 +1196,7 @@ ssm + jdk1.8 ...</p>
 
 
     <div class='content'>
-      <a href="/tags/ERP%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">ERP管理系统</a> <a href="/tags/HTML5%E5%B0%8F%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">HTML5小游戏</a> <a href="/tags/SEO%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">SEO网站优化</a> <a href="/tags/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">人力资源管理系统</a> <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 16.5px; color: #888">后端开发</a> <a href="/tags/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 19px; color: #777">图书管理系统</a> <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">客户管理系统</a> <a href="/tags/%E5%AE%BF%E8%88%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">宿舍管理系统</a> <a href="/tags/%E5%AF%9D%E5%AE%A4%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">寝室管理系统</a> <a href="/tags/%E6%9C%BA%E7%A5%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 16.5px; color: #888">机票管理系统</a> <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">权限管理系统</a> <a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E4%BA%AB/" style="font-size: 24px; color: #555">源码分享</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/" style="font-size: 21.5px; color: #666">系统源码</a> <a href="/tags/%E8%B4%AA%E5%90%83%E8%9B%87/" style="font-size: 14px; color: #999">贪吃蛇</a> <a href="/tags/%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">销存管理系统</a>
+      <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 14px; color: #999">C语言</a> <a href="/tags/ERP%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">ERP管理系统</a> <a href="/tags/HTML5%E5%B0%8F%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">HTML5小游戏</a> <a href="/tags/SEO%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">SEO网站优化</a> <a href="/tags/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">人力资源管理系统</a> <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 16.5px; color: #888">后端开发</a> <a href="/tags/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 19px; color: #777">图书管理系统</a> <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">客户管理系统</a> <a href="/tags/%E5%AE%BF%E8%88%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">宿舍管理系统</a> <a href="/tags/%E5%AF%9D%E5%AE%A4%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">寝室管理系统</a> <a href="/tags/%E6%9C%BA%E7%A5%A8%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 16.5px; color: #888">机票管理系统</a> <a href="/tags/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">权限管理系统</a> <a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E4%BA%AB/" style="font-size: 24px; color: #555">源码分享</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" style="font-size: 14px; color: #999">程序设计</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81/" style="font-size: 21.5px; color: #666">系统源码</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">编程</a> <a href="/tags/%E8%B4%AA%E5%90%83%E8%9B%87/" style="font-size: 14px; color: #999">贪吃蛇</a> <a href="/tags/%E9%94%80%E5%AD%98%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">销存管理系统</a>
     </div>
   </section>
 
@@ -1258,6 +1207,24 @@ ssm + jdk1.8 ...</p>
 </aside>
 
 
+
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="基于SSM的宿舍管理系统（附 演示、源码下载地址）";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.add("show");
+  
+</script>
 
         
       </div>
@@ -1281,30 +1248,93 @@ ssm + jdk1.8 ...</p>
       
     
   </footer>
-  
-  
-   <!--百度统计的代码-->
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?a93f6200bb892cd5ad339be4cb62db0f";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
 
 
-  
-  
-  
-
-
-      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
     </div>
   </div>
   <div>
-    <!-- required -->
+    <script>
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  
+  
+</script>
+<!-- required -->
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
 
@@ -1369,7 +1399,6 @@ var _hmt = _hmt || [];
 <script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
 
     <script type="text/javascript">
-      $(function(){
         var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
@@ -1384,22 +1413,17 @@ var _hmt = _hmt || [];
           }
           shuffle(imgs);
         }
-        if ('.cover-backstretch') {
-          $('.cover-backstretch').backstretch(
+	  function Pjax_backstretch(){
+        
+          $('#cover-backstretch').backstretch(
             imgs,
           {
             duration: "10000",
             fade: "1500"
           });
-        } else {
-          $.backstretch(
-            imgs,
-          {
-            duration: "10000",
-            fade: "1500"
-          });
-        }
-      });
+        
+	  }
+	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
     </script>
   
 
@@ -1571,9 +1595,9 @@ var _hmt = _hmt || [];
   function pjax_valine() {
     if(!document.querySelectorAll("#valine_container")[0])return;
 
-    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "快来评论吧~";
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
 
-    let path = $.trim($('#pjax-comment-path').text());
+    let path = pdata.commentPath;
     if (path.length == 0) {
       let defaultPath = '';
       path = defaultPath || decodeURI(window.location.pathname);
@@ -1594,7 +1618,7 @@ var _hmt = _hmt || [];
       highlight: 'true',
       mathJax: 'false',
       enableQQ: 'true',
-      recordIP: false,
+      recordIP: 'false',
       requiredFields: requiredFields,
       emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
       emojiMaps: emojiMaps
@@ -1609,91 +1633,6 @@ var _hmt = _hmt || [];
 
 
 
-  
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js" aysc></script>
-
-<script type="text/javascript">
-function getClientHeight(){
-  var clientHeight=0;
-  if(document.body.clientHeight&&document.documentElement.clientHeight){
-  var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
-  }else{
-  var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
-  }
-  return clientHeight;
-}
-function supportCss3(style) {
-  var prefix = ['webkit', 'Moz', 'ms', 'o'],
-  i,
-  humpString = [],
-  htmlStyle = document.documentElement.style,
-  _toHumb = function (string) {
-  return string.replace(/-(\w)/g, function ($0, $1) {
-  return $1.toUpperCase();
-  });
-  };
-  for (i in prefix)
-  humpString.push(_toHumb(prefix[i] + '-' + style));
-  humpString.push(_toHumb(style));
-  for (i in humpString)
-  if (humpString[i] in htmlStyle) return true;
-  return false;
-};
-//配置信息
-var options = {
-  bottom: '32px',
-  right: 'unset',
-  left: '16px',
-  time: '0s',
-  mixColor: '#f4f4f4',
-  backgroundColor: '#f4f4f4',
-  buttonColorDark: '#333',
-  buttonColorLight: '#ddd',
-  saveInCookies: true,
-  label: '',
-  autoMatchOsTheme: true
-};
-// 卡片兼容处理 mix-blend-mode 与 effect: [blur] 冲突
-
-function pjax_darkmodejs(){
-  
-  if(!supportCss3('mix-blend-mode'))return;
-  var checkExist2 = setInterval(function() {
-     if (typeof jQuery == 'undefined'){return;}
-     clearInterval(checkExist2);
-     var TopFlag=getClientHeight();
-    $(window).scroll(function(){
-      var top = $(document).scrollTop();
-      if(top > TopFlag) {
-        $(".darkmode-layer").css("mix-blend-mode","normal");
-        $(".darkmode-layer").css("background-color","#222");
-      }else{
-        $(".darkmode-layer").css("mix-blend-mode","difference");
-        $(".darkmode-layer").css("background-color","");
-      }
-    })
-  }, 100);
-  
-}
-// mix-blend-mode support?
-if(supportCss3('mix-blend-mode')){
-  window.darkmode = new Darkmode(options);
-  
-  window.darkmode.showWidget();
-  
-  pjax_darkmodejs();
-}
-////////////////Development///////////////////////
-//////////////darkmode模式切换////////////////////
-//window.darkmode.toggle();                     //
-//////////////darkmode模式判断////////////////////
-//console.log(window.darkmode.isActivated())    //
-//////////////////////////////////////////////////
-</script>
-
-
-
-
   <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
@@ -1702,27 +1641,31 @@ if(supportCss3('mix-blend-mode')){
 
 
 
-
-  
-    
-<script src="/js/search.js"></script>
-
-  
-
-
 <!-- optional -->
 
   <script>
 const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
 const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
-(function ($) {
+
+$('.input.u-search-input').one('focus',function(){
+	
+		loadScript('/js/search/hexo.js',setSearchService);
+	
+})
+
+function listenSearch(){
   
     customSearch = new HexoSearch({
       imagePath: SearchServiceimagePath
     });
   
-})(jQuery);
-
+}
+function setSearchService() {
+	listenSearch();
+	
+		document.addEventListener("pjax:success", listenSearch);
+	
+}
 </script>
 
 
@@ -1945,7 +1888,193 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 
 
 
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "user-color-scheme";
+const rootElementDarkModeAttributeName = "data-user-color-scheme";
+
+const setLS = (k, v) => {
+  try {
+    localStorage.setItem(k, v);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const removeLS = (k) => {
+  try {
+    localStorage.removeItem(k);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const getLS = (k) => {
+  try {
+    return localStorage.getItem(k);
+  } catch (e) {
+    console.log(e.message);
+    return null;
+  }
+};
+
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+
+/**
+ * get target mode
+ */
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+
+/**
+ * bind click event for toggle button
+ */
+function bindToggleButton() {
+	var btn=$("#wrapper .toggle-mode-btn");
+    btn.on('click',(e) => {
+      const mode = toggleCustomDarkMode();
+      applyCustomDarkModeSettings(mode);
+    });
+}
+
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", bindToggleButton);
+document.addEventListener("pjax:success", bindToggleButton);
+
+</script>
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
 <!-- more -->
+
+
 
 
     
@@ -1953,6 +2082,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 
 
 <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
 
 <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
 
@@ -1971,6 +2101,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
   
 </div>
 
+
 <script>
     var pjax;
     document.addEventListener('DOMContentLoaded', function () {
@@ -1978,6 +2109,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
         elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
         selectors: [
           "title",
+          "#l_cover",
           "#pjax-container",
           "#pjax-header-nav-list"
         ],
@@ -1987,7 +2119,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
     });
 
     document.addEventListener('pjax:send', function (e) {
-      window.stop(); // 相当于点击了浏览器的停止按钮
+      //window.stop(); // 相当于点击了浏览器的停止按钮
 
       try {
         var currentUrl = window.location.pathname;
@@ -2006,31 +2138,34 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
       if (typeof $.fancybox != "undefined") {
         $.fancybox.close();    // 关闭弹窗
       }
-      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
-      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
-      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
 
       // 解绑事件 避免重复监听
-      $('.s-top').unbind('click');
+      volantis.$topBtn.unbind('click');
       $('.menu a').unbind('click');
       $(window).unbind('resize');
       $(window).unbind('scroll');
       $(document).unbind('scroll');
       $(document).unbind('click');
       $('body').unbind('click');
+	  
       window.ShowLoading();
+	  
     });
 
     document.addEventListener('pjax:complete', function () {
       // 关于百度统计对 SPA 页面的处理：
       // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
       // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
-      // 
+       
 
       // 关于谷歌统计对 SPA 页面的处理：
       // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
       // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
       
+	 
 
       $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
       $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
@@ -2044,22 +2179,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
             pjax_fancybox();
           }
         
-          
-          if ('.cover-backstretch') {
-            $('.cover-backstretch').backstretch("resize");
-            if($('.cover-wrapper').is(':hidden')){
-              $('.cover-backstretch').backstretch("pause");
-            }else{
-              $('.cover-backstretch').backstretch("next");
-            }
-          } else {
-            $.backstretch("resize");
-            if($('.cover-wrapper').is(':hidden')){
-              $.backstretch("pause");
-            }else{
-              $.backstretch("next");
-            }
-          }
+		  Pjax_backstretch()
         
         
         
@@ -2076,16 +2196,18 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
         
         
         
-          pjax_darkmodejs();
-        
       } catch (e) {
         console.log(e);
       }
+	  
       window.HideLoading();
+	  
     });
 
     document.addEventListener('pjax:error', function (e) {
+	  
       window.HideLoading();
+	  
       window.location.href = e.triggerElement.href;
     });
 </script>
