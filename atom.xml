@@ -6,7 +6,7 @@
   <link href="https://cyouagain.cn/atom.xml" rel="self"/>
   
   <link href="https://cyouagain.cn/"/>
-  <updated>2021-02-16T11:29:51.791Z</updated>
+  <updated>2021-02-18T06:01:55.902Z</updated>
   <id>https://cyouagain.cn/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://cyouagain.cn/posts/62324.html"/>
     <id>https://cyouagain.cn/posts/62324.html</id>
     <published>2021-02-16T11:03:19.839Z</published>
-    <updated>2021-02-16T11:29:51.791Z</updated>
+    <updated>2021-02-18T06:01:55.902Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="练习2-1-Programming-in-C-is-fun"><a href="#练习2-1-Programming-in-C-is-fun" class="headerlink" title="练习2-1 Programming in C is fun!"></a>练习2-1 Programming in C is fun!</h2><p>本题要求编写程序，输出一个短句“Programming in C is fun!”。</p><p><strong>输入格式:</strong></p><p>本题目没有输入。</p><p><strong>输出格式:</strong></p><p>在一行中输出短句“Programming in C is fun!”。</p><p><strong>代码：</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  printf(&quot;Programming in C is fun!\n&quot;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p><strong>作者：</strong> C you again，从事软件开发  努力在IT搬砖路上的技术小白<br><strong>公众号：</strong> 【<a href="https://cyouagain.cn/"><font color="#5094d5" ><u>C you again</u></font></a>】，分享计算机类毕业设计源码、IT技术文章、游戏源码、网页模板、程序人生等等。公众号回复 【<font color="#e33e33" >** 粉丝 <strong></font>】进博主技术群，与大佬交流，</strong>领取干货学习资料**<br><strong>关于转载</strong>：欢迎转载博主文章，转载时表明出处<br><strong>求赞环节</strong>：创作不易，记得 <font color="#e33e33" >点赞</font>+<font color="#e33e33" >评论</font>+<font color="#e33e33" >转发</font> 谢谢你一路支持</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="练习2-1-Programming-in-C-is-fun"><a href="#练习2-1-Programming-in-C-is-fun" class="headerlink" title="练习2-1 Programming in C is fun!"></a>练习2-1 Programming in C is fun!</h2><p>本题要求编写程序，输出一个短句“Programming in C is fun!”。</p><p><strong>输入格式:</strong></p><p>本题目没有输入。</p><p><strong>输出格式:</strong></p><p>在一行中输出短句“Programming in C is fun!”。</p><p><strong>代码：</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  printf(&quot;Programming in C is fun!\n&quot;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p><strong>作者：</strong> C you again，从事软件开发  努力在IT搬砖路上的技术小白<br><strong>公众号：</strong> 【<a href="https://cyouagain.cn/"><font color="#5094d5" ><u>C you again</u></font></a>】，分享计算机类毕业设计源码、IT技术文章、游戏源码、网页模板、程序人生等等。公众号回复 【<font color="#e33e33" > 粉丝 </font>】进博主技术群，与大佬交流，领取干货学习资料<br><strong>关于转载</strong>：欢迎转载博主文章，转载时表明出处<br><strong>求赞环节</strong>：创作不易，记得 <font color="#e33e33" >点赞</font>+<font color="#e33e33" >评论</font>+<font color="#e33e33" >转发</font> 谢谢你一路支持</p></blockquote>]]></content>
     
     
     <summary type="html">本题要求编写程序，输出一个短句“Programming in C is fun!”。</summary>
