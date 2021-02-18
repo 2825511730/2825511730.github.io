@@ -6,7 +6,7 @@
   <link href="https://cyouagain.cn/atom.xml" rel="self"/>
   
   <link href="https://cyouagain.cn/"/>
-  <updated>2021-02-18T06:01:55.902Z</updated>
+  <updated>2021-02-18T06:08:22.877Z</updated>
   <id>https://cyouagain.cn/</id>
   
   <author>
@@ -17,13 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>练习2-3 输出倒三角图案 (5分)</title>
+    <link href="https://cyouagain.cn/posts/9348.html"/>
+    <id>https://cyouagain.cn/posts/9348.html</id>
+    <published>2021-02-18T06:03:57.267Z</published>
+    <updated>2021-02-18T06:08:22.877Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://gzh.cyouagain.cn/">  <font color='red'> <strong>公众号【C you again】回复 “<font color='green'>浙大版C语言</font>” 查看每道题目详细实现思路</strong> </a><br><a href="https://gzh.cyouagain.cn/">  <font color='red'> <strong>公众号【C you again】回复 “<font color='green'>编程交流群</font>” 进C/C++/Java编程题交流、问题解答群</strong>  </a> </p><p>本题要求编写程序，输出指定的由“*”组成的倒三角图案。</p><p><strong>输入格式:</strong></p><p>本题目没有输入。</p><p><strong>输出格式:</strong></p><p>按照下列格式输出由“*”组成的倒三角图案。</p><blockquote><p>* * * *<br>&nbsp;* * *<br>&nbsp;&nbsp;* *<br>&nbsp;&nbsp;&nbsp;*</p></blockquote><p><strong>代码:</strong></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;* * * *\n&quot;</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot; * * *\n&quot;</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;  * *\n&quot;</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;   *\n&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p><strong>作者：</strong> C you again，从事软件开发  努力在IT搬砖路上的技术小白<br><strong>公众号：</strong> 【<a href="https://cyouagain.cn/"><font color="#5094d5" ><u>C you again</u></font></a>】，分享计算机类毕业设计源码、IT技术文章、游戏源码、网页模板、程序人生等等。公众号回复 【<font color="#e33e33" > 粉丝 </font>】进博主技术群，与大佬交流，领取干货学习资料<br><strong>关于转载</strong>：欢迎转载博主文章，转载时表明出处<br><strong>求赞环节</strong>：创作不易，记得 <font color="#e33e33" >点赞</font>+<font color="#e33e33" >评论</font>+<font color="#e33e33" >转发</font> 谢谢你一路支持</p></blockquote>]]></content>
+    
+    
+    <summary type="html">本题要求编写程序，输出指定的由“*”组成的倒三角图案</summary>
+    
+    
+    
+    <category term="浙大版《C语言程序设计（第3版）》题目集" scheme="https://cyouagain.cn/categories/%E6%B5%99%E5%A4%A7%E7%89%88%E3%80%8AC%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89%E3%80%8B%E9%A2%98%E7%9B%AE%E9%9B%86/"/>
+    
+    
+    <category term="C语言" scheme="https://cyouagain.cn/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="程序设计" scheme="https://cyouagain.cn/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="编程" scheme="https://cyouagain.cn/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>练习2-1 Programming in C is fun!</title>
     <link href="https://cyouagain.cn/posts/62324.html"/>
     <id>https://cyouagain.cn/posts/62324.html</id>
     <published>2021-02-16T11:03:19.839Z</published>
-    <updated>2021-02-18T06:01:55.902Z</updated>
+    <updated>2021-02-18T06:03:44.185Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="练习2-1-Programming-in-C-is-fun"><a href="#练习2-1-Programming-in-C-is-fun" class="headerlink" title="练习2-1 Programming in C is fun!"></a>练习2-1 Programming in C is fun!</h2><p>本题要求编写程序，输出一个短句“Programming in C is fun!”。</p><p><strong>输入格式:</strong></p><p>本题目没有输入。</p><p><strong>输出格式:</strong></p><p>在一行中输出短句“Programming in C is fun!”。</p><p><strong>代码：</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  printf(&quot;Programming in C is fun!\n&quot;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p><strong>作者：</strong> C you again，从事软件开发  努力在IT搬砖路上的技术小白<br><strong>公众号：</strong> 【<a href="https://cyouagain.cn/"><font color="#5094d5" ><u>C you again</u></font></a>】，分享计算机类毕业设计源码、IT技术文章、游戏源码、网页模板、程序人生等等。公众号回复 【<font color="#e33e33" > 粉丝 </font>】进博主技术群，与大佬交流，领取干货学习资料<br><strong>关于转载</strong>：欢迎转载博主文章，转载时表明出处<br><strong>求赞环节</strong>：创作不易，记得 <font color="#e33e33" >点赞</font>+<font color="#e33e33" >评论</font>+<font color="#e33e33" >转发</font> 谢谢你一路支持</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>本题要求编写程序，输出一个短句“Programming in C is fun!”。</p><p><strong>输入格式:</strong></p><p>本题目没有输入。</p><p><strong>输出格式:</strong></p><p>在一行中输出短句“Programming in C is fun!”。</p><p><strong>代码：</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  printf(&quot;Programming in C is fun!\n&quot;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p><strong>作者：</strong> C you again，从事软件开发  努力在IT搬砖路上的技术小白<br><strong>公众号：</strong> 【<a href="https://cyouagain.cn/"><font color="#5094d5" ><u>C you again</u></font></a>】，分享计算机类毕业设计源码、IT技术文章、游戏源码、网页模板、程序人生等等。公众号回复 【<font color="#e33e33" > 粉丝 </font>】进博主技术群，与大佬交流，领取干货学习资料<br><strong>关于转载</strong>：欢迎转载博主文章，转载时表明出处<br><strong>求赞环节</strong>：创作不易，记得 <font color="#e33e33" >点赞</font>+<font color="#e33e33" >评论</font>+<font color="#e33e33" >转发</font> 谢谢你一路支持</p></blockquote>]]></content>
     
     
     <summary type="html">本题要求编写程序，输出一个短句“Programming in C is fun!”。</summary>
